@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mavenry Consulting — Stan Finch</title>
+  <meta name="description" content="Strategy. Growth. Execution. Mavenry helps businesses unlock growth, streamline operations, and scale with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #BF5700;        /* Burnt Orange */
+      --dark: #2C2C2C;         /* Charcoal */
+      --sage: #6B8E79;         /* Sage accent */
+      --steel: #355269;        /* Steel blue accent */
+      --bg: #FFFFFF;           /* Background */
+      --muted: #F6F6F6;        /* Light gray section */
+      --text: #1c1c1c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: 'Lora', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
+      line-height: 1.6;
+    }
+    h1,h2,h3,h4,h5 { font-family: 'Poppins', sans-serif; color: var(--dark); margin: 0 0 0.5rem; line-height: 1.2;}
+    p { margin: 0 0 1rem; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.9); backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid #eaeaea;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 0; }
+    .brand { display:flex; align-items:center; gap: .6rem; font-family:'Poppins',sans-serif; font-weight:700; }
+    .brand-mark { width: 12px; height: 28px; background: var(--brand); border-radius: 6px; }
+    .nav a { margin-left: 1.2rem; font-weight: 600; color: var(--dark); }
+    .cta { background: var(--brand); color: #fff; padding: .6rem 1rem; border-radius: 10px; }
+    .cta:hover { opacity: .9; text-decoration: none;}
+    /* Hero */
+    .hero { padding: 5.5rem 0 3rem; }
+    .hero-grid { display:grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items:center; }
+    .kicker { color: var(--brand); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-family: 'Poppins', sans-serif; font-size:.9rem; }
+    .headline { font-size: clamp(2rem, 3.2vw, 3.2rem); margin-top: .4rem;}
+    .subhead { color:#444; font-size: 1.05rem; }
+    .hero-card {
+      background: linear-gradient(135deg, #fff, #fff 50%, #f7f4f1);
+      border: 1px solid #eee; border-radius: 18px; padding: 1.2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .badge-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top: 1rem;}
+    .badge { background: var(--muted); border:1px solid #ececec; padding:.5rem .7rem; border-radius:999px; font-size:.9rem;}
+    /* Sections */
+    section { padding: 3.5rem 0; }
+    .section-muted { background: var(--muted); }
+    .section-title { font-size: clamp(1.6rem, 2.2vw, 2.2rem); margin-bottom: .8rem;}
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card {
+      border: 1px solid #ececec; border-radius: 16px; padding: 1rem;
+      background: #fff;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.04);
+    }
+    .card h3 { font-size: 1.1rem; }
+    .card p { color:#444; }
+    .icon { width: 38px; height: 38px; border-radius: 10px; display:grid; place-items:center; color:#fff; font-weight:700; margin-bottom:.6rem;}
+    .i-strategy { background: var(--steel); }
+    .i-ops { background: var(--sage); }
+    .i-invest { background: var(--brand); }
+    /* Projects */
+    .filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom: 1rem;}
+    .filter-btn {
+      border:1px solid #ddd; background:#fff; padding:.45rem .8rem; border-radius:999px; cursor:pointer; font-weight:600;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--brand); color:#fff; border-color: var(--brand); }
+    .project-card .meta { font-size:.9rem; color:#666; margin-bottom:.4rem; }
+    .project-card .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.4rem; }
+    .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
+    /* About */
+    .about-grid { display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; align-items:center; }
+    .quote { border-left:4px solid var(--brand); padding-left: 1rem; color:#333; font-style: italic; }
+    /* Contact */
+    form { display:grid; gap:.8rem; max-width: 560px; }
+    input, textarea {
+      width: 100%; padding:.75rem .9rem; border-radius: 12px; border:1px solid #dcdcdc; font: inherit;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    button[type=submit] { border: none; }
+    .btn { background: var(--brand); color:#fff; padding:.8rem 1rem; border-radius:12px; font-weight:700; cursor:pointer; }
+    .btn:hover { opacity:.95; }
+    /* Footer */
+    footer { padding: 2rem 0; border-top:1px solid #eee; color:#666; font-size:.95rem; }
+    .footer-grid { display:grid; grid-template-columns: 1fr auto; align-items:center; }
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid, .grid-3, .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <a href="#top" style="font-size:1.05rem; color:var(--dark); text-decoration:none;">Mavenry Consulting</a>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Work With Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">Strategy • Growth • Execution</div>
+          <h1 class="headline">I help businesses unlock growth, streamline operations, and scale with confidence.</h1>
+          <p class="subhead">I’m <strong>Stan Finch</strong>, a management consultant and entrepreneur (former BCG Project Leader; Founder of Muse Paintbar). I bring a mix of consulting rigor and operator experience to strategy, operations, and investment decisions.</p>
+          <div class="badge-row">
+            <span class="badge">10+ consulting engagements (all with follow-ons)</span>
+            <span class="badge">Scaled 32 locations • $25M annual bookings</span>
+            <span class="badge">Harvard MBA</span>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <h3 style="font-family:'Poppins',sans-serif; margin-bottom:.4rem;">Quick Intro</h3>
+            <p>Who I help: founders, executives, and investors needing clear strategy and decisive execution.</p>
+            <p style="margin:.6rem 0 0;"><a class="cta" href="#contact">Start a conversation</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section-muted">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon i-strategy">S</div>
+            <h3>Strategy Formation</h3>
+            <p>Market entry and growth playbooks; portfolio and location strategy; prioritization and roadmapping.</p>
+          </div>
+          <div class="card">
+            <div class="icon i-ops">O</div>
+            <h3>Operational Improvement</h3>
+            <p>Pricing systems, process design, assortment tools, and cross-functional implementation.</p>
+          </div>
+          <div class="card">
+            <div class="icon i-invest">I</div>
+            <h3>Investment Support</h3>
+            <p>Analytics, modeling, and diligence for high-stakes decisions; fundraising and valuation support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Strategy">Strategy</button>
+          <button class="filter-btn" data-filter="Operations">Operations</button>
+          <button class="filter-btn" data-filter="Finance">Finance</button>
+          <button class="filter-btn" data-filter="Tools">Tools</button>
+        </div>
+        <div class="grid-3" id="projectGrid">
+          <!-- Project cards -->
+          <div class="card project-card" data-tags="Finance Airline">
+            <div class="meta">Corporate Finance • Airline • Dallas, TX</div>
+            <h3>Valuation of Non‑Core Business Unit</h3>
+            <p>Evaluated the prospect of selling a non-core unit for a U.S.-based global airline; built valuation deck and supporting model used by leadership.</p>
+            <div class="tags"><span class="tag">Finance</span><span class="tag">Airline</span><span class="tag">1 mo</span></div>
+          </div>
+
+          <div class="card project-card" data-tags="Operations Airline">
+            <div class="meta">Implementation • Airline • Multiple, USA</div>
+            <h3>Union Scheduling Process Overhaul</h3>
+            <p>Facilitated relations between union leadership and management; designed and rolled out an updated scheduling process and change plan.</p>
+            <div class="tags"><span class="tag">Operations</span><span class="tag">Airline</span></div>
+          </div>
+
+          <div class="card project-card" data-tags="Finance Tech">
+            <div class="meta">Corporate Finance • Tech • Santiago, Chile</div>
+            <h3>Growth Model & Fundraising Deck</h3>
+            <p>Built a financial/growth model and investor deck for a South American business intelligence startup.</p>
+            <div class="tags"><span class="tag">Finance</span><span class="tag">Modeling</span></div>
+          </div>
+
+          <div class="card project-card" data-tags="Strategy Tech Legal">
+            <div class="meta">Strategy • Legal Tech • Buenos Aires, Argentina</div>
+            <h3>U.S. Market Entry Evaluation</h3>
+            <p>Analyzed U.S. entry options for a South American legal services business; prioritized target segments and go-to-market plan.</p>
+            <div class="tags"><span class="tag">Strategy</span><span class="tag">Market Entry</span></div>
+          </div>
+
+          <div class="card project-card" data-tags="Tools Tech">
+            <div class="meta">Tool Development • Tech • Santiago, Chile</div>
+            <h3>Sales Deck & Enablement Tools</h3>
+            <p>Created a corporate sales deck and supporting collateral for enterprise outreach.</p>
+            <div class="tags"><span class="tag">Tools</span><span class="tag">Enablement</span></div>
+          </div>
+
+          <div class="card project-card" data-tags="Strategy Retail">
+            <div class="meta">Strategy • Retail • USA</div>
+            <h3>Retail Location Strategy</h3>
+            <p>Modeled demand and site economics across regions; produced an expansion blueprint that improved sales per square foot.</p>
+            <div class="tags"><span class="tag">Strategy</span><span class="tag">Retail</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-muted">
+      <div class="container about-grid">
+        <div>
+          <h2 class="section-title">About Stan Finch</h2>
+          <p class="quote">“I’ve been on both sides — as a consultant and as a founder scaling a national brand.”</p>
+          <p>Former Project Leader at the Boston Consulting Group. Founder & CEO of Muse Paintbar, scaled to 32 locations and $25M in annual bookings; raised $15M+ across rounds. Harvard MBA. Today I run Mavenry Consulting, partnering with select clients on strategy, operations, and investment support.</p>
+        </div>
+        <div class="card">
+          <h3>Fast Facts</h3>
+          <ul>
+            <li>10+ consulting engagements completed — all with follow-on work</li>
+            <li>Scaled national consumer brand; built executive team of 400+</li>
+            <li>Deep analytics, modeling, and decision support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Let’s Work Together</h2>
+        <p>Drop a note and I’ll be in touch.</p>
+        <form action="https://formspree.io/f/your-id-here" method="POST">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="_replyto" placeholder="Email" required />
+          <input type="text" name="company" placeholder="Company (optional)" />
+          <textarea name="message" placeholder="What would you like to accomplish?" required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+          <p style="font-size:.9rem; color:#666;">Prefer email? <a href="mailto:stan@mavenry.io">stan@mavenry.io</a> • Call: <a href="tel:+13614160259">361.416.0259</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>&copy; <span id="year"></span> Mavenry Consulting. All rights reserved.</div>
+      <div><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple project filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          const tags = c.dataset.tags;
+          if (f === 'all' || tags.includes(f)) {
+            c.style.display = '';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
