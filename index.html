@@ -26,7 +26,9 @@
     .hero-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:2.2rem; align-items:center; }
     .hero-img { border-radius:16px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.12); }
     .hero-img img { width:100%; height:auto; display:block; object-fit:cover; }
-    .kicker { color:var(--brand); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-family:'Poppins',sans-serif; font-size:.9rem; }
+/*  .kicker { color:var(--brand); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-family:'Poppins',sans-serif; font-size:.9rem; } */
+    .kicker { color:var(--brand); font-weight:800; letter-spacing:.06em; font-family:'Poppins', sans-serif; font-size: 1.2rem;}
+
     .headline { font-size:clamp(1.2rem,3vw + 1rem,2rem); margin-top:.4rem; line-height: 1; font-weight: 500; }
     .subhead { color:#444; font-size:1.05rem; }
     .badge-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
@@ -48,7 +50,7 @@
     .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:center; }
     .avatar-wrap { display:flex; justify-content:center; }
-    .avatar { width:360px; max-width:100%; height:auto; border-radius:50%; }
+    .avatar { width:360px; max-width:100%; height:auto; border-radius:0; }
     .quote { border-left:4px solid var(--brand); padding-left:1rem; color:#333; font-style:italic; }
     form { display:grid; gap:.8rem; max-width:560px; }
     input, textarea { width:100%; padding:.75rem .9rem; border-radius:12px; border:1px solid #dcdcdc; font:inherit; }
@@ -87,23 +89,25 @@
         <div>
           <div class="kicker">mavenry consulting</div>
           <h1 class="headline">Blends operator perspective, consulting rigor, and applied AI to power smart solutions.</h1>
-            <p class="subhead">I’m <strong>Stan Finch</strong>, a management consultant and former founder/CEO of Muse Paintbar, a best-in-class consumer brand with 30+ locations. I’ve worked across industries — with notable focus in consumer, healthcare, and private equity. </p>
-            <p class="subhead">Recent projects utilize leading AI to transform complex, messy data into next-level analysis, actionable strategy, and innovative operational tools.</p>
+            <p class="subhead">I’m <strong>Stan Finch</strong>, a management consultant and former founder/CEO of Muse Paintbar, a best-in-class consumer brand with 30+ locations. I’ve consulted across industries with particular focus in consumer, healthcare, and private equity. </p>
+            <p class="subhead">My approach integrates leading AI to transform complex, messy data into next-level analysis, actionable strategy, and innovative operational tools.</p>
           <div class="badge-row">
             <span class="badge">50+ consulting engagements</span>
             <span class="badge">7+ years project experience</span>
-            <span class="badge">Founded a national brand</span>
             <span class="badge">Led analytics training for BCG Texas</span>
             <span class="badge">Harvard MBA</span>
           </div>
-          <p style="margin-top:1rem;"><a class="cta" href="#contact">Connect</a></p>
+          <button class="cta" type="submit">Connect</button>
         </div>
         <div class="hero-img">
           <picture>
-            <source srcset="assets/img/headshot-oval-360.webp" type="image/webp">
-            <img class="avatar" src="assets/img/headshot-oval.png" alt="Headshot of Stan Finch" loading="lazy" />
+            <source srcset="assets/img/hero-1600.webp 1600w, assets/img/hero-1000.webp 1000w" type="image/webp">
+            <img src="assets/img/hero-1600.jpg"
+                 srcset="assets/img/hero-1600.jpg 1600w, assets/img/hero-1000.jpg 1000w"
+                 alt="Stan Finch daydreaming about market share" loading="eager" />
           </picture>
         </div>
+
       </div>
     </section>
 
@@ -159,8 +163,8 @@
         </div>
         <div class="avatar-wrap">
           <picture>
-            <source srcset="assets/img/headshot-circle-360.webp" type="image/webp">
-            <img class="avatar" src="assets/img/headshot-circle.png" alt="Headshot of Stan Finch" loading="lazy" />
+            <source srcset="assets/img/headshot-oval-360.webp" type="image/webp">
+            <img class="avatar" src="assets/img/headshot-oval.png" alt="Headshot of Stan Finch" loading="lazy" />
           </picture>
         </div>
       </div>
