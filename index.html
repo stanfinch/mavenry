@@ -40,6 +40,8 @@
     .badge { background:var(--muted); border:1px solid #ececec; padding:.2rem .4rem; border-radius:999px; font-size:.85rem; font-weight:700; }
 
     section { padding:3.5rem 0; } .section-muted { background:var(--muted); }
+    @media (max-width: 640px) {.hero {padding-top: 1rem;   /* reduce top spacing on mobile */
+      padding-bottom: 1rem;} /* optional: balance bottom too */
     .section-title { font-size:clamp(1.6rem,2.2vw,2.2rem); margin-bottom:.8rem; }
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
     .card { border:1px solid #ececec; border-radius:16px; padding:1rem; background:#fff; box-shadow:0 3px 14px rgba(0,0,0,.04); }
