@@ -39,10 +39,12 @@
     .section-title { font-size:clamp(1.6rem,2.2vw,2.2rem); margin-bottom:.8rem; }
 
     /* Cards */
-    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
-    .card { border:1px solid #ececec; border-radius:16px; padding:1rem; background:#fff; box-shadow:0 3px 14px rgba(0,0,0,.04); }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; align-items: stretch;}
+    .card { display:flex; flex-direction:column; justify-content:space-between; border:1.5px solid #ececec; border-radius:16px;
+      padding:1rem; background:#fff; box-shadow:0 3px 14px rgba(0,0,0,.04); }
     .card h3 { font-size:1.05rem; }
     .card p { color:#444; }
+    .card > *:last-child  { margin-bottom: 0; }
     .icon { width:38px; height:38px; border-radius:10px; display:grid; place-items:center; color:#fff; font-weight:700; }
     .i-strategy{background:var(--steel)} .i-ops{background:var(--sage)} .i-invest{background:var(--brand)}
 
@@ -107,9 +109,9 @@
       <div>
         <!-- <div class="kicker">mavenry consulting</div> -->
         <h1 class="headline">Elite Analytics + Operator's Mindset + AI Proficiency</h1>
-          <p class="subhead">I’m <strong>Stan Finch</strong>, an ex-BCG consultant with 7+ years experience. I also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
-          <p class="subhead">I blend that background with pragmatic AI to generate clear strategic insight and smart operational improvement.</p>
-          <p class="subhead">My industry experience is broad with focus on consumer, healthcare, and PE..</p>
+          <p class="subhead"><strong>Stan Finch</strong>, is an ex-BCG consultant with 7+ years experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
+          <p class="subhead">He supplements that background with pragmatic AI to generate clear strategic insight and smart operational solutions.</p>
+          <p class="subhead">Stan's industry experience is broad with emphasis in consumer, healthcare, and PE. Filter and search project history below. </p>
         <div class="badge-row">
           <!-- <span class="badge">7+ years project experience</span> -->
           <span class="badge">BCG Analytics Trainer</span>
@@ -137,15 +139,15 @@
         <div class="grid-3">
           <div class="card">
             <div class="card-head"><div class="icon i-strategy">S</div><h3>Strategy Formation</h3></div>
-            <p>Market entry and growth playbooks; portfolio and location strategy; prioritization and roadmapping.</p>
+            <p>Market entry and growth playbooks; portfolio and location strategy; prioritization and roadmapping</p>
           </div>
           <div class="card">
             <div class="card-head"><div class="icon i-ops">O</div><h3>Operational Improvement</h3></div>
-            <p>Pricing systems, process design, assortment tools, and cross-functional implementation.</p>
+            <p>Pricing systems, labor models, merchandising tools, budgeting/planning templates, pilot design</p>
           </div>
           <div class="card">
             <div class="card-head"><div class="icon i-invest">I</div><h3>Investment Support</h3></div>
-            <p>Analytics, modeling, and diligence for high-stakes decisions; fundraising and valuation support.</p>
+            <p>Financial analysis, scenario modeling, and diligence for key decisions; fundraising/valuation support</p>
           </div>
         </div>
       </div>
