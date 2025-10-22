@@ -75,21 +75,21 @@
     .footer-grid{ display:grid; grid-template-columns:1fr auto; align-items:center; }
 
     /* Mobile tweaks */
-    .headline .headline-mobile { display: none; } /* default: desktop only */
+    /* .headline .headline-mobile { display: none; } /* default: desktop only */
     @media (max-width:960px){ .hero-grid,.grid-3,.about-grid{grid-template-columns:1fr} .brand svg{height:44px} .avatar{width:280px} }
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }}
       /* Mobile: keep headline on one line and auto-shrink to fit */
-    @media (max-width: 640px) {
+    /* @media (max-width: 640px) {
       .headline{
         white-space: nowrap;                 /* one line */
-        font-size: clamp(1.05rem, 5.6vw, 2rem);  /* fluid, shrinks as needed */
-        line-height: 1.15;
-        color: inherit !important;           /* override any prior transparency */
-        overflow: visible;                   /* avoid clipping */
-        text-overflow: clip; }}                /* no ellipsis */
-    
+        /* font-size: clamp(1.05rem, 5.6vw, 2rem);  /* fluid, shrinks as needed */
+        /* line-height: 1.15; */
+        /* color: inherit !important;           /* override any prior transparency */
+        /* overflow: visible;                   /* avoid clipping */
+        /* text-overflow: clip; }}                /* no ellipsis */
+
     /* Headline: swap text on mobile, no pseudo-elements */
     /* @media (max-width: 640px) {  /* show mobile span, hide desktop span */
       /* .headline .headline-desktop { display: none; }
