@@ -82,12 +82,13 @@
       /* MOBILE headline: short text, one line, no overlap */
     @media (max-width: 640px) {
       .headline {
+        content: "Elite Analytics + Operator Chops + AI Fluency";
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: clamp(1rem, 5.4vw, 2rem);
         line-height: 1.15;
-        color: transparent;  /* hide original long text */
+        /* color: transparent;  /* hide original long text */ */
         }
       .headline::before {
         content: "Elite Analytics + Operator Chops + AI Fluency";
