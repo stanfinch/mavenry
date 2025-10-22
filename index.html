@@ -79,22 +79,21 @@
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }}
-    /* MOBILE headline: use short text, keep single line, avoid overlap */
+      /* MOBILE headline: short text, one line, no overlap */
     @media (max-width: 640px) {
-   .headline {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: clamp(1rem, 5.4vw, 2rem);
-    line-height: 1.15;
-    color: transparent;}  /* hide original long text */
-   .headline::before {
-    content: "Elite Analytics + Pragmatism + AI";
-    display: block;      /* in normal flow (no absolute positioning) */
-    color: inherit;      /* show the substituted text */
-    white-space: nowrap;}}
-
-
+      .headline {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: clamp(1rem, 5.4vw, 2rem);
+        line-height: 1.15;
+        color: transparent;  /* hide original long text */
+        }
+      .headline::before {
+        content: "Elite Analytics + Operator Chops + AI Fluency";
+        display: block;      /* normal flow */
+        color: inherit;
+        white-space: nowrap;
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
@@ -253,7 +252,7 @@
 
 <footer>
   <div class="container footer-grid">
-    <div>&copy; <span id="year"></span> Mavenry Consulting. All rights reserved.</div>
+    <div>&copy; <span id="year"></span> Mavenry Consulting.</div>
     <div><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
