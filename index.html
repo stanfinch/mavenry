@@ -80,22 +80,31 @@
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }}
-    /* Headline: swap text on mobile, no pseudo-elements */
+      /* Mobile: keep headline on one line and auto-shrink to fit */
     @media (max-width: 640px) {
-  /* show mobile span, hide desktop span */
-      .headline .headline-desktop { display: none; }
+      .headline{
+        white-space: nowrap;                 /* one line */
+        font-size: clamp(1.05rem, 5.6vw, 2rem);  /* fluid, shrinks as needed */
+        line-height: 1.15;
+        color: inherit !important;           /* override any prior transparency */
+        overflow: visible;                   /* avoid clipping */
+        text-overflow: clip; }}                /* no ellipsis */
+    
+    /* Headline: swap text on mobile, no pseudo-elements */
+    /* @media (max-width: 640px) {  /* show mobile span, hide desktop span */
+      /* .headline .headline-desktop { display: none; }
       .headline .headline-mobile  {
         display: inline;                  /* sits in normal flow */
-        white-space: nowrap;              /* keep on one line */
-        font-size: clamp(1.1rem, 5.5vw, 2.1rem);
-        line-height: 1.15;}
+        /* white-space: nowrap;              /* keep on one line */
+        /* font-size: clamp(1.1rem, 5.5vw, 2.1rem); */
+        /* line-height: 1.15;} */
       /* IMPORTANT: keep the h1 itself "normal" so it doesn't influence siblings */
-      .headline {
-        white-space: normal;              /* reset any previous nowrap */
-        overflow: visible;                /* reset any previous overflow */
-        text-overflow: clip;              /* reset any previous ellipsis */
-        position: static;                 /* ensure no absolute effects linger */
-        margin-bottom: 1rem; }}           /* standard spacing below h1 */
+      /* .headline { */
+        /* white-space: normal;              /* reset any previous nowrap */
+        /* overflow: visible;                /* reset any previous overflow */
+        /* text-overflow: clip;              /* reset any previous ellipsis */
+        /* position: static;                 /* ensure no absolute effects linger */
+        /* margin-bottom: 1rem; }}           /* standard spacing below h1 */
 
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
@@ -127,10 +136,7 @@
     <div class="container hero-grid">
       <div>
         <!-- <div class="kicker">mavenry consulting</div> -->
-        <h1 class="headline">
-          <span class="headline-desktop">Elite Analytics + Operator's Mindset + AI Proficiency</span>
-          <span class="headline-mobile">Elite Analytics + Operator Chops + AI Fluency</span>
-        </h1>
+        <h1 class="headline">Elite Analytics + Operator Chops + AI Fluency</h1>
           <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
           <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse <a href="#services">typical engagements</a>.</p>
           <p class="subhead">He has broad industry experience with emphasis in consumer, PE, and healthcare. Filter and search Stan's <a href="#projects">full project history.</a></p>
