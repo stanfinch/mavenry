@@ -32,7 +32,7 @@
     .headline { font-size:clamp(1rem,3vw + 1rem,1.3rem); margin-top:0rem; line-height: 1.3; font-weight: 650; margin-bottom: 1rem;}
     .subhead { color:#444; font-size:1.05rem; margin-top:.25rem; }
     .badge-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
-    .badge { background:transparent; border:1.7px solid var(--brand); padding:.2rem .3rem; border-radius:999px; font-size:.85rem; font-weight:625; font-family:'Poppins',sans-serif; } /* color:var(--brand); */
+    .badge { background:transparent; border:1.7px solid var(--brand); padding:.2rem .25rem; border-radius:999px; font-size:.85rem; font-weight:600; font-family:'Poppins',sans-serif; } /* color:var(--brand); */
 
     section { padding:1rem 0; }
     .section-muted { background:var(--muted); }
@@ -80,6 +80,8 @@
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }
     }
+    /* Ensure in-page anchors stop below sticky header */
+    #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
 </head>
 <body>
@@ -109,14 +111,16 @@
       <div>
         <!-- <div class="kicker">mavenry consulting</div> -->
         <h1 class="headline">Elite Analytics + Operator's Mindset + AI Proficiency</h1>
-          <p class="subhead"><strong>Stan Finch</strong>, is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
-          <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse typical projects.</p>
-          <p class="subhead">He has broad industry experience with emphasis in consumer, healthcare, and PE. Filter and search Stan's full project history. </p>
+          <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
+          <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse <a href="#services">typical engagements</a>.</p>
+          <p class="subhead">He has broad industry experience with emphasis in consumer, healthcare, and PE. Filter and search Stan's <a href="#projects">full project history.</a></p>
         <div class="badge-row">
           <!-- <span class="badge">7+ years project experience</span> -->
           <span class="badge">BCG Analytics Trainer</span>
           <span class="badge">50+ Projects</span>
           <span class="badge">Harvard MBA</span>
+          <span class="badge" data-hide-on-wrap>YPO</span>
+          <span class="badge" data-hide-on-wrap>CFA</span>
         </div>
         <!-- <button class="cta" type="submit">Connect</button> -->
       </div>
@@ -179,18 +183,18 @@
       <div class="container about-grid">
         <div>
           <h2 class="section-title">About Stan Finch</h2>
-
           <h3>Consulting Experience</h3>
           <ul>
             <li>7+ years in management consulting; led quantitative training at <strong>BCG Texas</strong>.</li>
-            <li>50+ consulting engagements across strategy, operations, and investment support.</li>
-            <li>Recent work integrates <strong>AI</strong> to build advanced analytics and decision tools.</li>
+            <li>50+ engagements across strategy, operations, and PE-backed initiatives.</li>
+            <li>Applied <strong>AI</strong> to build analytics, decision tools, and automation.</li>
           </ul>
 
           <h3>Operating Experience</h3>
           <ul>
-            <li>Founder &amp; CEO of <strong>Muse Paintbar</strong>, scaled to 30+ locations.</li>
-            <li>Built teams across 10 states; 400+ employees; $25M in annual bookings; raised $15M.</li>
+            <li>Founder &amp; CEO, <strong>Muse Paintbar</strong> — scaled from concept to 30+ locations across 10 states.</li>
+            <li>Built org &amp; leadership: 400+ employees, multi-state operations, KPI dashboards.</li>
+            <li>Capital: raised $15M+; budgeting, scenario modeling, and valuation support.</li>
           </ul>
 
           <h3>Education</h3>
@@ -201,9 +205,11 @@
 
           <h3>Personal</h3>
           <ul>
-            <li>Based in the Denver area with two daughters and an energetic puppy.</li>
+            <li>Denver area; two daughters and an energetic puppy.</li>
             <li>Volunteer coach with the kids’ ski team.</li>
           </ul>
+          <p style="margin-top:.5rem;"><a href="assets/resume.pdf" target="_blank" rel="noopener">View full resume →</a></p>
+
         </div>
         <div class="avatar-wrap">
           <picture>
@@ -236,6 +242,22 @@
     <div><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
+
+<script>
+  // Hide badges with data-hide-on-wrap if they wrap to a second row
+  function hideWrappedBadges(){
+    const row = document.querySelector('.badge-row');
+    if(!row) return;
+    const first = row.firstElementChild;
+    if(!first) return;
+    const top = first.offsetTop;
+    [...row.querySelectorAll('[data-hide-on-wrap]')].forEach(b=>{
+      b.style.display = (b.offsetTop > top) ? 'none' : '';
+    });
+  }
+  window.addEventListener('load', hideWrappedBadges);
+  window.addEventListener('resize', hideWrappedBadges);
+</script>
 
 <!-- ====== Embedded projects data as CSV (paste your full table here; keep the header row) ====== -->
 <script>
@@ -316,7 +338,9 @@ Project Description,Case Type,Industry,Location,Dur,"Key analyses/output persona
     return el;
   }
   const allCards = PROJECTS.map(renderCard);
+  console.log('Projects parsed:', PROJECTS.length);
   allCards.forEach(c => grid.appendChild(c));
+  console.log('Cards rendered to grid:', grid.children.length);
 
   const pills = Array.from(document.querySelectorAll('.filter-pill'));
   const seeMoreBtn = document.getElementById('seeMore');
