@@ -82,10 +82,21 @@
       .badge-row{ justify-content:space-between; gap:.6rem; }}
     /* Headline: swap text on mobile, no pseudo-elements */
     @media (max-width: 640px) {
+  /* show mobile span, hide desktop span */
       .headline .headline-desktop { display: none; }
-      .headline .headline-mobile  { display: inline; white-space: nowrap;} /* keep on one line */
-      .headline { font-size: clamp(1rem, 5.4vw, 2rem); line-height: 1.15; }} /* fluid size on mobile */
-      
+      .headline .headline-mobile  {
+        display: inline;                  /* sits in normal flow */
+        white-space: nowrap;              /* keep on one line */
+        font-size: clamp(1.1rem, 5.5vw, 2.1rem);
+        line-height: 1.15;}
+      /* IMPORTANT: keep the h1 itself "normal" so it doesn't influence siblings */
+      .headline {
+        white-space: normal;              /* reset any previous nowrap */
+        overflow: visible;                /* reset any previous overflow */
+        text-overflow: clip;              /* reset any previous ellipsis */
+        position: static;                 /* ensure no absolute effects linger */
+        margin-bottom: 1rem; }}           /* standard spacing below h1 */
+
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
