@@ -80,6 +80,24 @@
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }
     }
+    @media (max-width: 640px) {
+    .headline::before {
+    content: "Elite Analytics + Pragmatism + AI";
+    display: block;}
+    .headline {
+    font-size: clamp(1rem, 6vw, 2rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: transparent;           /* hide original text */
+    position: relative;}
+    .headline::before {
+    color: inherit;               /* show substituted text */
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;}}
+
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
@@ -113,13 +131,13 @@
         <h1 class="headline">Elite Analytics + Operator's Mindset + AI Proficiency</h1>
           <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
           <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse <a href="#services">typical engagements</a>.</p>
-          <p class="subhead">He has broad industry experience with emphasis in consumer, healthcare, and PE. Filter and search Stan's <a href="#projects">full project history.</a></p>
+          <p class="subhead">He has broad industry experience with emphasis in consumer, PE, and healthcare. Filter and search Stan's <a href="#projects">full project history.</a></p>
         <div class="badge-row">
           <!-- <span class="badge">7+ years project experience</span> -->
           <span class="badge">BCG Analytics Trainer</span>
           <span class="badge">50+ Projects</span>
           <span class="badge">Harvard MBA</span>
-          <span class="badge" data-hide-on-wrap>YPO</span>
+          <span class="badge" data-hide-on-wrap>YPO Member</span>
           <span class="badge" data-hide-on-wrap>CFA</span>
         </div>
         <!-- <button class="cta" type="submit">Connect</button> -->
