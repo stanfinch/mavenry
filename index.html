@@ -75,26 +75,17 @@
     .footer-grid{ display:grid; grid-template-columns:1fr auto; align-items:center; }
 
     /* Mobile tweaks */
+    .headline .headline-mobile { display: none; } /* default: desktop only */
     @media (max-width:960px){ .hero-grid,.grid-3,.about-grid{grid-template-columns:1fr} .brand svg{height:44px} .avatar{width:280px} }
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }}
-      /* MOBILE headline: short text, one line, no overlap */
+    /* Headline: swap text on mobile, no pseudo-elements */
     @media (max-width: 640px) {
-      .headline {
-        content: "Elite Analytics + Operator Chops + AI Fluency";
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: clamp(1rem, 5.4vw, 2rem);
-        line-height: 1.15;
-        /* color: transparent;  /* hide original long text */ */
-        }
-      .headline::before {
-        content: "Elite Analytics + Operator Chops + AI Fluency";
-        display: block;      /* normal flow */
-        color: inherit;
-        white-space: nowrap;
+      .headline .headline-desktop { display: none; }
+      .headline .headline-mobile  { display: inline; white-space: nowrap;} /* keep on one line */
+      .headline { font-size: clamp(1rem, 5.4vw, 2rem); line-height: 1.15; }} /* fluid size on mobile */
+      
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
@@ -125,7 +116,10 @@
     <div class="container hero-grid">
       <div>
         <!-- <div class="kicker">mavenry consulting</div> -->
-        <h1 class="headline">Elite Analytics + Operator's Mindset + AI Proficiency</h1>
+        <h1 class="headline">
+          <span class="headline-desktop">Elite Analytics + Operator's Mindset + AI Proficiency</span>
+          <span class="headline-mobile">Elite Analytics + Operator Chops + AI Fluency</span>
+        </h1>
           <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
           <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse <a href="#services">typical engagements</a>.</p>
           <p class="subhead">He has broad industry experience with emphasis in consumer, PE, and healthcare. Filter and search Stan's <a href="#projects">full project history.</a></p>
