@@ -78,25 +78,22 @@
     @media (max-width:960px){ .hero-grid,.grid-3,.about-grid{grid-template-columns:1fr} .brand svg{height:44px} .avatar{width:280px} }
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
-      .badge-row{ justify-content:space-between; gap:.6rem; }
-    }
+      .badge-row{ justify-content:space-between; gap:.6rem; }}
+    /* MOBILE headline: use short text, keep single line, avoid overlap */
     @media (max-width: 640px) {
-    .headline::before {
-    content: "Elite Analytics + Pragmatism + AI";
-    display: block;}
-    .headline {
-    font-size: clamp(1rem, 6vw, 2rem);
+   .headline {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: transparent;           /* hide original text */
-    position: relative;}
-    .headline::before {
-    color: inherit;               /* show substituted text */
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-size: clamp(1rem, 5.4vw, 2rem);
+    line-height: 1.15;
+    color: transparent;}  /* hide original long text */
+   .headline::before {
+    content: "Elite Analytics + Pragmatism + AI";
+    display: block;      /* in normal flow (no absolute positioning) */
+    color: inherit;      /* show the substituted text */
     white-space: nowrap;}}
+
 
     /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
