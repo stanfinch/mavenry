@@ -29,7 +29,11 @@
     .hero-img { border-radius:16px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.12); }
     .hero-img img { width:100%; height:auto; display:block; object-fit:cover; }
     .kicker { color:var(--brand); font-weight:800; letter-spacing:.06em; text-transform:uppercase; font-family:'Poppins',sans-serif; font-size:1.2rem; }
-    .headline { font-size:clamp(0.9rem, 4.2vw + 0.3rem, 2.3rem); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:0rem; line-height:1.3; font-weight:650; margin-bottom: 1rem;}
+    .headline { font-size:clamp(14px, 2.8vw + 0.2rem, 26px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:0rem; line-height:1.3; font-weight:650; margin-bottom: 1rem;}
+    /* Mobile: shrink a touch more so it never wraps on ~430px CSS width (16 Pro Max) */
+    @media (max-width: 640px) {
+      .headline { font-size: clamp(12px, 5.0vw, 16px); }}
+
      /* @media (min-width: 1200px) {.headline { font-size: 23px; }  /* stops growing past a certain point */ */
     /* font-size:clamp(0.9rem,3vw + 0.9rem,1.3rem); */
     /* white-space:nowrap; text-align:left; font-size:2vw;  */
