@@ -29,7 +29,7 @@
     .hero-img { border-radius:16px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.12); }
     .hero-img img { width:100%; height:auto; display:block; object-fit:cover; }
     .kicker { color:var(--brand); font-weight:800; letter-spacing:.06em; text-transform:uppercase; font-family:'Poppins',sans-serif; font-size:1.2rem; }
-    .headline { font-size:clamp(17px, 2.8vw + 0.2rem, 26px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:0rem; line-height:1.3; font-weight:650; margin-bottom: 1rem;}
+    .headline { font-size:clamp(17.5px, 2.8vw + 0.2rem, 26px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:0rem; line-height:1.3; font-weight:650; margin-bottom: 1rem;}
     /* Mobile: shrink a touch more so it never wraps on ~430px CSS width (16 Pro Max) */
     /* @media (max-width: 640px) {
       .headline { font-size: clamp(12px, 5.0vw, 16px); }} */
@@ -43,7 +43,7 @@
 
     section { padding:1rem 0; }
     .section-muted { background:var(--muted); }
-    .section-title { font-size:clamp(1.6rem,2.2vw,2.2rem); margin-bottom:1.5rem; }
+    .section-title { font-size:clamp(17.5px, 2.8vw + 0.2rem, 26px); margin-bottom:1rem; }
 
     /* Cards */
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; align-items: stretch;}
@@ -69,7 +69,7 @@
     .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
 
     /* About */
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:center; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:center; }
     .avatar-wrap { display:flex; justify-content:center; }
     .avatar { width:360px; max-width:100%; height:auto; border-radius:0; }
 
@@ -145,7 +145,7 @@
         <!-- <div class="kicker">mavenry consulting</div> -->
         <h1 class="headline">Elite Analytics + Operator Chops + AI Fluency</h1>
           <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years consulting experience. He also founded Muse Paintbar, a premier consumer brand with 30+ locations.</p>
-          <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse <a href="#services">typical engagements</a>.</p>
+          <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse his <a href="#services">typical engagements</a>.</p>
           <p class="subhead">He has broad industry experience with emphasis in consumer, PE, and healthcare. Filter and search Stan's <a href="#projects">full project history.</a></p>
         <div class="badge-row">
           <!-- <span class="badge">7+ years project experience</span> -->
@@ -193,7 +193,7 @@
   <!-- PROJECTS (now light gray; no duration in tags) -->
   <section id="projects" class="section-muted">
       <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title">Stan's Project History</h2>
 
         <!-- Pill filter bar -->
         <div class="filters" role="tablist" aria-label="Project filters">
@@ -218,29 +218,33 @@
           <h2 class="section-title">About Stan Finch</h2>
           <h3>Consulting Experience</h3>
           <ul>
-            <li>7+ years in management consulting; led quantitative training at <strong>BCG Texas</strong>.</li>
-            <li>50+ engagements across strategy, operations, and PE-backed initiatives.</li>
-            <li>Applied <strong>AI</strong> to build analytics, decision tools, and automation.</li>
+            <li>Promoted twice at BCG, both times at earliest opportunity</li>
+            <li>Led analytics, modeling, and stats training at <strong>BCG Texas</strong>.</li>
+            <li>Have completed 50+ projects over 7+ years</li>
           </ul>
 
           <h3>Operating Experience</h3>
           <ul>
-            <li>Founder &amp; CEO, <strong>Muse Paintbar</strong> — scaled from concept to 30+ locations across 10 states.</li>
-            <li>Built org &amp; leadership: 400+ employees, multi-state operations, KPI dashboards.</li>
-            <li>Capital: raised $15M+; budgeting, scenario modeling, and valuation support.</li>
+            <li>Founder of <strong>Muse Paintbar</strong>; CEO for 8 years</li>
+            <li><u>Footprint</u>: Developed prototype then built 30 stores in 6 years</li>
+            <li><u>Organization</u>: Hired team of 400+ across 3 hubs (Boston, NYC, DC)</li>
+            <li><u>Premier Quality</u>: Top c-sat scores of top 10 ‘paint & sip’ players</li>
+            <li><u>Financing</u>: Raised over $15M from seed funding to private equity</li>
           </ul>
 
           <h3>Education</h3>
           <ul>
-            <li><strong>Harvard Business School</strong> (MBA).</li>
-            <li><strong>Northwestern University</strong> — M.S. Industrial Engineering; B.A. Economics &amp; Legal Studies.</li>
+            <li><strong>Harvard Business School</strong> — M.B.A.</li>
+            <li><strong>Northwestern University</strong> — M.S. Industrial Engineering
+            <li><strong>Northwestern University</strong> — B.A. Economics &amp; Legal Studies</li>
+
           </ul>
 
-          <h3>Personal</h3>
-          <ul>
-            <li>Denver area; two daughters and an energetic puppy.</li>
-            <li>Volunteer coach with the kids’ ski team.</li>
-          </ul>
+          <!-- <h3>Personal</h3> -->
+          <!-- <ul> -->
+            <!-- <li>Lives in Denver area with his two daughters</li> -->
+            <!-- <li>Volunteer coach with the kids’ ski team.</li> -->
+          <!-- </ul> -->
           <p style="margin-top:.5rem;"><a href="assets/resume.pdf" target="_blank" rel="noopener">View full resume →</a></p>
 
         </div>
@@ -256,7 +260,7 @@
   <section id="contact">
       <div class="container">
         <h2 class="section-title">Let’s Work Together</h2>
-        <p>Drop a note and I’ll be in touch.</p>
+        <!-- <p>Drop a note and I’ll be in touch.</p> -->
         <form action="https://formspree.io/f/your-id-here" method="POST">
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="_replyto" placeholder="Email" required />
