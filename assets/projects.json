@@ -1,0 +1,502 @@
+[
+  {
+    "Project Description": "Evaluated the prospect of selling non-core business unites to increase overall shareholder value (i.e., was sum of the parts worth more than combined entity)",
+    "Case Type": "Corp Fin",
+    "Industry": "Airline",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* valuation deck and supporting model/analysis",
+    "Detailed Function(s)": "Valuation",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Facilitated relations between union leadership and company management by presenting fact-based analysis to inform key decisions around scheduling and process flows",
+    "Case Type": "Implementation",
+    "Industry": "Airline",
+    "Location": "Multiple USA",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* updated scheduling process\n* process reports to facilitate communication/efficiency",
+    "Detailed Function(s)": "Operations, Process Improvement",
+    "Bucket": "Oth"
+  },
+  {
+    "Project Description": "Created a financial/growth model, a pitch deck for prospective investors, and facilitated meetings with prospective venture capital companies",
+    "Case Type": "Corp Fin",
+    "Industry": "Tech",
+    "Location": "Santiago, Chile",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* pitch deck for prospective investors\n* financial/resource plan for planning and growth scenarios",
+    "Detailed Function(s)": "Business Plan, Fundraising, Modeling",
+    "Bucket": "Oth"
+  },
+  {
+    "Project Description": "Evaluated the potential for client to enter the U.S. market, created prioritization of U.S. markets, and articulated detailed roadmap of expansion gameplan",
+    "Case Type": "Strategy",
+    "Industry": "Tech",
+    "Location": "Buenos Aires, Argentina",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* analysis/prioritization of potential U.S. markets\n* document with detailed roadmap on how to enter the U.S.",
+    "Detailed Function(s)": "Market Entry, B2B Sales, Modeling",
+    "Bucket": "Oth"
+  },
+  {
+    "Project Description": "Created a sales deck for prospective corporate customers and an internal resource model and operational gameplan to help know who to hire and when",
+    "Case Type": "Tool Development",
+    "Industry": "Tech",
+    "Location": "Santiago, Chile",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* sales deck for prospective corporate clients",
+    "Detailed Function(s)": "B2B Sales, Business Plan, Fundraising, Modeling",
+    "Bucket": "Oth"
+  },
+  {
+    "Project Description": "Performed high-level analysis to determine where the best expansion opportunities were within the U.S. by evaluating the competitive intensity of each state / top market along with their market share in each",
+    "Case Type": "Diagnostic",
+    "Industry": "Construction",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* measurement of competitive intensity in the construction “large project” market by U.S. state and top 50 markets",
+    "Detailed Function(s)": "Strategy, Market Analysis",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Professionalized and updated their business plan, provided support for their valuation rationale using an econometric model of public comps and microcap equities, identified list of most promising venture capital prospects",
+    "Case Type": "Corp Fin",
+    "Industry": "CPG",
+    "Location": "Rosario, Argentina",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* professional business plan with supporting model/analysis\n* valuation analysis and support using stat. Models\n* list of prospective venture capital firms that were best fit",
+    "Detailed Function(s)": "Business Plan, Valuation, Stats, Fundraising",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Created roadmap for Brazilian market entry and pitch decks for prospective grocery customers, launched/analyzed proprietary consumer survey & research, evaluated the potential for U.S. market entry",
+    "Case Type": "Strategy",
+    "Industry": "CPG",
+    "Location": "Rosario, Argentina",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* launch strategy for Brazilian market\n* sales deck for grocery partners in Brazil and elsewhere\n* consumer survey and other analysis to eval U.S. mkt entry",
+    "Detailed Function(s)": "Market Entry, B2B Sales, Consumer Surveys",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Diagnostic to evaluate “quick wins” to increase EBITDA / operational cash flow amidst an economic downturn; key focus areas were pricing, sourcing, & G&A",
+    "Case Type": "Diagnostic",
+    "Industry": "CPG",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* statistical analysis on 2 key product categories (diapers & toilet paper) on impact of price moves and discounts",
+    "Detailed Function(s)": "Pricing, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Based on our diagnostic, we did a deeper dive on sourcing where we evaluated the potential to save on several key procurement areas; targeted and hit $25mm of annual savings",
+    "Case Type": "Implementation",
+    "Industry": "CPG",
+    "Location": "Wisconsin",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* recognized savings of ~$30mm across variety of procurement categories\n* detailed hurricane pattern analysis to articulate risk of consolidated plastic supply for diapers",
+    "Detailed Function(s)": "Procurement, Project Management, Market Analysis",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Led the development of e-commerce website from scratch, sourced the merchandise & fulfillment, executed digital marketing, and sold it to one of the fulfillment partners",
+    "Case Type": "Implementation",
+    "Industry": "E-commerce",
+    "Location": "Boston, MA",
+    "Dur": "6 mo",
+    "Key analyses/output personally created": "* fully completed e-commerce site with only $5k investment\n* completed sale to a distribution partner for $150,000",
+    "Detailed Function(s)": "Online Strategy, Digital Marketing",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Developed website, e-commerce platform, sales database (for private parties), and digital marketing toolkit for a system that generated $20mm in annual revenue",
+    "Case Type": "Tool Development",
+    "Industry": "E-commerce",
+    "Location": "New York, NY",
+    "Dur": "6 mo",
+    "Key analyses/output personally created": "* full website (www.musepaintbar.com); custom backend for events and private parties; custom SQL database",
+    "Detailed Function(s)": "Online Strategy, Digital Marketing",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Created benchmarking system to appropriately measure fund performance across asset types; automated the process for easy updates moving forward",
+    "Case Type": "Investment Funds",
+    "Industry": "Hedge Fund",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* spreadsheet with macros that would automatically sync & refresh with online benchmark data across 4 asset classes",
+    "Detailed Function(s)": "KPIs",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Created KPI report and dashboard for a hedge fund that invests in litigation services; allows them to more effectively track effectiveness of both advertising types/partners and litigation partners",
+    "Case Type": "Investment Funds",
+    "Industry": "Hedge Fund",
+    "Location": "Tampa, FL",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* updated KPI dashboard used by exec committee\n* detailed process description along with how to troubleshoot",
+    "Detailed Function(s)": "KPIs",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Developed 5-year strategy to increase the number of Advanced Placement tests taken and passed by high school students in Texas",
+    "Case Type": "Strategy",
+    "Industry": "Non-Profit",
+    "Location": "Dallas, TX",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* multivariate regression model to project impact after plugging in various inputs\n* rolled up forecasts in different scenarios",
+    "Detailed Function(s)": "Modeling, Strategy, Forecasting",
+    "Bucket": "Oth"
+  },
+  {
+    "Project Description": "Diligence on a pharmaceutical distributor: key focus area was their drug portfolio and whether they would be able to easily replace and/or add to it as drug patents expired",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* forecasted revenue provided by existing portfolio and qualitative likelihood of replacement",
+    "Detailed Function(s)": "Due Diligence, Market Analysis, Modeling",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Diligence on a medical scrubs manufacturer: key focus area was their business with Wal-Mart (represented ~50% of profits) and the risks associated with it",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* framework of how W-M thinks about categories along with key metrics with how medical scrubs fits\n* insights on likelihood that W-M would direct source",
+    "Detailed Function(s)": "Due Diligence, Market Analysis",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Diligence on a restaurant/entertainment concept: key focus area was the evaluation of stores by cohort and whether they had staying power or not",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* multivariate model to more accurately project store revenue based on factors like time in market, competitive intensity, etc.",
+    "Detailed Function(s)": "Due Diligence, Market Analysis",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Diligence on a regional U.S. telephone company (an incumbent local exchange carrier): key focus area was the baseline market growth, or lack thereof, and impact of descaling on financials",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* market/firm projection model that forecasted impact of various  market scenarios on firm’s financials/valuation",
+    "Detailed Function(s)": "Due Diligence, Valuation, Modeling",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Developed template to communicate high points of fund investments to limited partners of the fund and created the initial report",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* MS Word and Powerpoint template with style, formatting\n* example report of an actual investment team had just made",
+    "Detailed Function(s)": "Fundraising, Modeling, Due Diligence",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Led the company side to pitch investors and then complete diligence for $15mm of institutional investment",
+    "Case Type": "Corp Fin",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "New York, NY",
+    "Dur": "6 mo",
+    "Key analyses/output personally created": "* pitch deck that generated sufficient interest to have ~25 followup meetings with middle market private equity firms\n* completed financing deal (x2) including all diligence items",
+    "Detailed Function(s)": "Fundraising, Modeling, Due Diligence",
+    "Bucket": "Fin"
+  },
+  {
+    "Project Description": "Crafted store real estate strategy and rollout plan for the next 50 locations of entertainment/restaurant concept",
+    "Case Type": "Strategy",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "New York, NY",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* real estate strategy document\n* list of specific shopping centers that were options for rollout",
+    "Detailed Function(s)": "Real Estate",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Managed the roll-out of 32 stores from Maine to Virginia; included authoring several documents to standardize the operation",
+    "Case Type": "Implementation",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "East Coast",
+    "Dur": "18 mo",
+    "Key analyses/output personally created": "* checklist with over 100 items per store along with responsibilities\n* standards document to ensure quality/consistency",
+    "Detailed Function(s)": "Project Management",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Created the prototype of an entertainment/restaurant concept that generated 75% annual ROI per unit; able to use this to raise funds for 30+ additional stores",
+    "Case Type": "Implementation",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "New England",
+    "Dur": "9 mo",
+    "Key analyses/output personally created": "* fully operational store concept\n* set of learnings for future locations",
+    "Detailed Function(s)": "Prototype, Business Plan, Market Entry",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Developed updated food & beverage menu for 30 stores; included supplier revamp/optimization and a 3-tiered pricing system based on store volume & location",
+    "Case Type": "Implementation",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "East Coast",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* New menu & other promotional collateral\n* Projected revenue/margin impact\n* Everything needed to update the POS systems",
+    "Detailed Function(s)": "Merchandising, Procurement, Pricing",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Created tool to predict the revenue that i) a potential new product (i.e., an artwork) would generate based on consumer surveys and social media feedback and ii) an established product would generate based on statistical eval of past performance",
+    "Case Type": "Tool Development",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "New York, NY",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* spreadsheet based tool to evaluate prospective new products (art works) and old ones\n* spreadsheet tool to create monthly calendar in each studio",
+    "Detailed Function(s)": "Merchandising, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Developed process and tool to staff employees such that i) all constraints were met (requested off days, legal requirements, min resources on schedule) and ii) highest rated employees working at times when customer signups projected to be highest",
+    "Case Type": "Tool Development",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "New York, NY",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* spreadsheet to generate automated monthly staffing calendar at each of 30 stores",
+    "Detailed Function(s)": "Organization",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Developed automated process for surveys emailed to customers to feed into company dashboard (both corporate and store-level versions) with customer satisfaction scores",
+    "Case Type": "Tool Development",
+    "Industry": "Restaurant / Entertainment",
+    "Location": "Boston, MA",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* process to send automated emails to customers after attending events and record quant/qual feedback\n* database of thousands of customer reviews that fed into company-wide KPI dashboard for customer satisfaction ratings",
+    "Detailed Function(s)": "KPIs, Organization, Consumer Surveys",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Worked with the in-house finance team to take the work we had done with merchandising and the optimization of their promotional calendar and: i) flow it into their cash planning models and ii) use it as part of the sales pitch to raise additional capital",
+    "Case Type": "Corp Fin",
+    "Industry": "Retail",
+    "Location": "Michigan",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* packaged slides showing cash impact of proposed strategies\n* spreadsheets that synced our consulting work with their in-house models",
+    "Detailed Function(s)": "Cash Planning, Fundraising",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Performed detailed analyses on customer segments and merchandise departments to help inform client’s strategic planning and key operational initiatives",
+    "Case Type": "Strategy",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* customer lifetime value by segment\n* SKU/department level profitability",
+    "Detailed Function(s)": "Merchandising, Lifetime Value",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Full profitability comparison/teardown across locations (by type, geography, etc.) and within merchandising departments to inform real estate and product strategy",
+    "Case Type": "Strategy",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* 5,000 person consumer survey + detailed analysis\n* store-level profitability correlations with 100+ variables",
+    "Detailed Function(s)": "Real Estate, Market Analysis, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Evaluated customer segments and product category performance to determine the potential to add new revenue to a struggling bookstore chain",
+    "Case Type": "Strategy",
+    "Industry": "Retail",
+    "Location": "Michigan",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* 10,000 response consumer survey with detailed analysis\n* pro forma projections of potential new products/services",
+    "Detailed Function(s)": "Consumer Surveys, Market Entry",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Determined the potential savings from “delayering” excess levels of middle management present within the organization",
+    "Case Type": "Diagnostic",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* analysis/deck showing the savings potential if increasing the “span of control” to 5-7 people per manager",
+    "Detailed Function(s)": "Organization",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Ran a secret shopper program and performed consumer survey to understand areas for quick wins during challenging economic conditions",
+    "Case Type": "Diagnostic",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* preliminary diagnostic analyses to help client better prioritize strategic initiatives & consultants focus areas",
+    "Detailed Function(s)": "Organization, Consumer Surveys",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Evaluated 10+ million records of company transaction data, along with a consumer survey, to help inform where to focus upcoming strategic initiatives",
+    "Case Type": "Diagnostic",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* identified potential opportunities across merch/staffing/pricing/ops along with next steps to better evaluate within each",
+    "Detailed Function(s)": "Consumer Surveys, Big Data, Lifetime Value",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Implemented updated merchandising process for buyers/planners that was more tied to GM $ ROI (return on both inventory and space investment)",
+    "Case Type": "Implementation",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* updated inventory and space investment by category\n* merchandising planning process based much more on actual EBITDA contributions",
+    "Detailed Function(s)": "Merchandising, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Based on findings from prior strategic project, we revamped the merchandising, menu, and pricing of the custom framing department for all stores nationwide",
+    "Case Type": "Implementation",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* revamped custom framing menu & merchandising\n* pilot program design and execution",
+    "Detailed Function(s)": "Prototype, Business Plan, Market Entry",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Created several tools for planners using Excel/VBA/SQL to facilitate their merchandising process (e.g., GMROI heat maps, matrices showing product gaps)",
+    "Case Type": "Tool Development",
+    "Industry": "Retail",
+    "Location": "Dallas, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* Suite of tools that planners and buyers could use to better evaluate existing SKUs/departments and potential new additions",
+    "Detailed Function(s)": "Merchandising, Stats, Project Management",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Created store performance model to help inform which stores should be closed",
+    "Case Type": "Tool Development",
+    "Industry": "Retail",
+    "Location": "Michigan",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* regression model fit to current stores that evaluated baseline potential of location\n* buckets of stores based on potential closure plans",
+    "Detailed Function(s)": "Real Estate, Market Analysis, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Analyzed promotions/discounting to better understand impact on monthly EBITDA and fed that into an updated monthly cash flow / EBITDA model used by the lenders as the company approached bankruptcy",
+    "Case Type": "Tool Development",
+    "Industry": "Retail",
+    "Location": "Michigan",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* back-fitted model of store revenue/margin based on promotional calendar\n* recommended “optimized” calendar based on model\n* syncing of model with FP&A’s monthly cash flow model",
+    "Detailed Function(s)": "Pricing, Cash Planning, Stats",
+    "Bucket": "Con"
+  },
+  {
+    "Project Description": "Developed strategy & framework to benchmark measurable aspects of the patient journey (vs. most analogous competitors) for key brands",
+    "Case Type": "Strategy",
+    "Industry": "Life Sciences",
+    "Location": "New Jersey",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* frameworks on benchmarking, which metrics to use, and how to think about comps\n* prototype analysis across patient journey (approvals, fill rate, days on therapy, etc.)",
+    "Detailed Function(s)": "Market Analysis, KPIs",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Used IQVIA data to implement benchmarking in 2 key ways: i) created a “brand story” document for each of 7 high-priority brands  and ii) help to flow the relevant benchmarking data into management dashboard reports",
+    "Case Type": "Implementation",
+    "Industry": "Life Sciences",
+    "Location": "New Jersey",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* 50-slide “brand story” for 7 high-priority brands showing relative strengths/weaknesses\n* python script that converted IQVIA data into summarized analysis for dashboard reports",
+    "Detailed Function(s)": "Benchmarking, Big Data, Stats",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Developed a set of metrics to better assess site and doctor utilization for a PE-backed veterinary roll-up",
+    "Case Type": "Diagnostic",
+    "Industry": "Life Sciences",
+    "Location": "Austin, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* process to create reports along with the SQL language used\n* deck with utilization analysis & insights across sites, regions, store types, etc.",
+    "Detailed Function(s)": "KPIs, Operations",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Created strategic pricing framework to standardize and optimize pricing across ~250 vet hospitals",
+    "Case Type": "Strategy",
+    "Industry": "Life Sciences",
+    "Location": "Austin, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* 2 decks with finalizing pricing strategy / supporting analysis\n* model with adjustable parameters to tweak pricing moving forward",
+    "Detailed Function(s)": "Pricing, Strategy",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Implemented key elements of the pricing framework that we developed for ~250 vet hospitals across the U.S.",
+    "Case Type": "Implementation",
+    "Industry": "Life Sciences",
+    "Location": "Austin, TX",
+    "Dur": "2 mo",
+    "Key analyses/output personally created": "* store performance model to inform formula used to tier sites\n* python macros to scrape competitor websites for external pricing",
+    "Detailed Function(s)": "Pricing, Stats, Automation",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Created a consistent, data-driven approach to guide hiring decisions across regions/stores; worked with HR to get buy-in with key players in finance, field ops, etc.",
+    "Case Type": "Implementation",
+    "Industry": "Life Sciences",
+    "Location": "Austin, TX",
+    "Dur": "1 mo",
+    "Key analyses/output personally created": "* decision-tree to guide decisions regarding locally-requested job listings \n* GIS mapping tool showing utilization/EBITDA/revenue of all locations to better visualize potential resource support from surrounding areas",
+    "Detailed Function(s)": "Organization, Operations",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Worked with executive team to i) evaluate strategic fit of legacy brand within broader portfolio and ii) develop brand-specific 5-year strategy to turn around struggling operational performance moving forward",
+    "Case Type": "Strategy",
+    "Industry": "CPG",
+    "Location": "Chicago, IL",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* competitive analysis/benchmarking of most relevant CPG comps\n* scoring of ‘market attractiveness’ and ‘right to win’ in several segments for 3 product lines\n* 5-year financial impact/forecast, incorporated into company’s overall projections",
+    "Detailed Function(s)": "Market Analysis, Modeling, Strategy, Forecasting",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Determined how to best adjust/optimize promotional pricing so that key seasonal bottlenecks are removed from key facility in order to reach volume targets",
+    "Case Type": "Implementation",
+    "Industry": "CPG",
+    "Location": "Chicago, IL",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* simple multi-variate model to forecast output based on pricing/promotions\n* adjusted volume/revenue forecast based on updated promotional model that would allow company to increase margin without decreasing volume",
+    "Detailed Function(s)": "Operations, Process Improvement",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Performed detailed analyses on several segments, sliced by technology type and end-market application, to help inform client’s strategic planning and key operational initiatives",
+    "Case Type": "Strategy",
+    "Industry": "Tech",
+    "Location": "California",
+    "Dur": "4 mo",
+    "Key analyses/output personally created": "* model to score various segments based on weighted variables such as size, growth, fit, etc.\n* performed ROI of client’s largest client vs. rest of portfolio using several methodologies\n* 5-year financial forecast of various strategies",
+    "Detailed Function(s)": "Market Analysis, Strategy",
+    "Bucket": ""
+  },
+  {
+    "Project Description": "Category Prioritization: Developed fact base and built a scoring system based on market share, concentration, pricing power, recent growth, distribution trends, SKU velocity, etc. \nBrand Rankings: Ranked brands based on recent performance, potential synergies, actionability",
+    "Case Type": "Investment Funds",
+    "Industry": "Private Equity",
+    "Location": "Chicago, IL",
+    "Dur": "3 mo",
+    "Key analyses/output personally created": "* model to score food/beverage categories using Nielsen data, survey analysis, and financials\n* model to rank brands using same data and some high-level due diligence\n* finalized decks with recommendations on segment focus and 50 brand targets",
+    "Detailed Function(s)": "Due Diligence, Market Analysis, Strategy",
+    "Bucket": ""
+  }
+]

@@ -337,85 +337,93 @@ Project Description,Case Type,Industry,Location,Dur,"Key analyses/output persona
     return map[b] || (b[0].toUpperCase()+b.slice(1).toLowerCase());
   }
 
-  const { header, data } = parseCSV(PROJECTS_CSV.trim());
-  const col = {
-    title: idx(header,'Project Description') ?? idx(header,'Description'),
-    caseType: idx(header,'Case Type'),
-    industry: idx(header,'Industry'),
-    location: idx(header,'Location'),
-    dur: idx(header,'Dur'),
-    detail: idx(header,'Key analyses/output personally created'),
-    funcs: idx(header,'Detailed Function(s)'),
-    bucket: idx(header,'Bucket')
-  };
+  <script>
+  /* === Load projects from assets/projects.json === */
+  (async function initProjectsFromJSON(){
+    try {
+      const res = await fetch('assets/projects.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to fetch assets/projects.json');
+      const json = await res.json();
 
-  const PROJECTS = data.map(cols => {
-    const title = (cols[col.title] || 'Project').trim();
-    const caseType = (cols[col.caseType] || '').trim();
-    const industry = (cols[col.industry] || '').trim();
-    const location = (cols[col.location] || '').trim();
-    const dur = (cols[col.dur] || '').trim();
-    const detail = (cols[col.detail] || '').trim();
-    const funcs = (cols[col.funcs] || '').trim();
-    const bucket = normalizeBucket((cols[col.bucket] || 'Strategy').trim());
-    const meta = [caseType, industry, location].filter(Boolean).join(' • ');
-    let desc = title;
-    const extras = [];
-    if(funcs) extras.push(funcs);
-    if(detail && detail !== '*') extras.push(detail);
-    if(extras.length) desc += ' — ' + extras.join('; ');
-    /* CHANGED PER REQUEST: no duration in tags */
-    const tags = [bucket, industry, caseType].filter(Boolean);
-    return { meta, title, desc, tags };
-  });
+      const PROJECTS = json.map(row => {
+        const title    = (row["Project Description"] || "Project").trim();
+        const caseType = (row["Case Type"] || "").trim();
+        const industry = (row["Industry"] || "").trim();
+        const location = (row["Location"] || "").trim();
+        const detail   = (row["Key analyses/output personally created"] || "").trim();
+        const funcs    = (row["Detailed Function(s)"] || "").trim();
+        const bucket   = normalizeBucket((row["Bucket"] || "Strategy").trim());
+        const meta = [caseType, industry, location].filter(Boolean).join(' • ');
+        let desc = title;
+        const extras = [];
+        if (funcs) extras.push(funcs);
+        if (detail && detail !== '*') extras.push(detail);
+        if (extras.length) desc += ' — ' + extras.join('; ');
+        const tags = [bucket, industry, caseType].filter(Boolean);
+        return { meta, title, desc, tags };
+      });
 
-  const grid = document.getElementById('projectGrid');
-  function renderCard(p){
-    const tags = (p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
-    const el = document.createElement('div');
-    el.className = 'card project-card';
-    el.dataset.tags = (p.tags||[]).join(' ');
-    el.innerHTML = `<div class="meta">${p.meta||''}</div><h3>${p.title}</h3><p>${p.desc}</p><div class="tags">${tags}</div>`;
-    return el;
-  }
-  const allCards = PROJECTS.map(renderCard);
-  console.log('Projects parsed:', PROJECTS.length);
-  allCards.forEach(c => grid.appendChild(c));
-  console.log('Cards rendered to grid:', grid.children.length);
+      const grid = document.getElementById('projectGrid');
+      grid.innerHTML = '';
+      const allCards = PROJECTS.map(renderCard);
+      allCards.forEach(c => grid.appendChild(c));
 
-  const pills = Array.from(document.querySelectorAll('.filter-pill'));
-  const seeMoreBtn = document.getElementById('seeMore');
-  const perPage = 6;
-  let currentFilter = 'all';
-  let visibleCount = 0;
+      const pills = Array.from(document.querySelectorAll('.filter-pill'));
+      const seeMoreBtn = document.getElementById('seeMore');
+      const perPage = 6;
+      let currentFilter = 'all';
+      let visibleCount = 0;
 
-  function getFiltered(){ return currentFilter==='all' ? allCards : allCards.filter(c => (c.dataset.tags||'').includes(currentFilter)); }
-  function applyFilter(newFilter){
-    currentFilter = newFilter; visibleCount = 0;
-    pills.forEach(p=>{ const a=p.dataset.filter===newFilter; p.classList.toggle('is-active', a); p.setAttribute('aria-selected', a?'true':'false'); });
-    allCards.forEach(c=>c.style.display='none');
-    const filtered = getFiltered();
-    filtered.slice(0,perPage).forEach(c=>c.style.display='');
-    visibleCount = Math.min(perPage, filtered.length);
-    seeMoreBtn.style.display = (visibleCount < filtered.length) ? '' : 'none';
-  }
-  pills.forEach(p=>{
-    p.addEventListener('click', ()=>applyFilter(p.dataset.filter));
-    p.addEventListener('keydown', e=>{
-      if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
-      const i = pills.indexOf(p);
-      const n = e.key==='ArrowRight' ? (i+1)%pills.length : (i-1+pills.length)%pills.length;
-      pills[n].focus();
-    });
-  });
-  seeMoreBtn.addEventListener('click', ()=>{
-    const filtered = getFiltered();
-    const next = filtered.slice(visibleCount, visibleCount+perPage);
-    next.forEach(c=>c.style.display='');
-    visibleCount += next.length;
-    if(visibleCount >= filtered.length) seeMoreBtn.style.display='none';
-  });
-  applyFilter('all');
+      function getFiltered(){
+        return currentFilter === 'all'
+          ? allCards
+          : allCards.filter(c => (c.dataset.tags || '').includes(currentFilter));
+      }
+
+      function applyFilter(newFilter){
+        currentFilter = newFilter;
+        visibleCount = 0;
+        pills.forEach(p=>{
+          const a = p.dataset.filter === newFilter;
+          p.classList.toggle('is-active', a);
+          p.setAttribute('aria-selected', a ? 'true' : 'false');
+        });
+        allCards.forEach(c => c.style.display = 'none');
+        const filtered = getFiltered();
+        filtered.slice(0, perPage).forEach(c => c.style.display = '');
+        visibleCount = Math.min(perPage, filtered.length);
+        seeMoreBtn.style.display = (visibleCount < filtered.length) ? '' : 'none';
+      }
+
+      pills.forEach(p=>{
+        p.addEventListener('click', ()=>applyFilter(p.dataset.filter));
+        p.addEventListener('keydown', e=>{
+          if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+          const i = pills.indexOf(p);
+          const n = e.key==='ArrowRight' ? (i+1)%pills.length : (i-1+pills.length)%pills.length;
+          pills[n].focus();
+        });
+      });
+
+      seeMoreBtn.addEventListener('click', ()=>{
+        const filtered = getFiltered();
+        const next = filtered.slice(visibleCount, visibleCount + perPage);
+        next.forEach(c=>c.style.display='');
+        visibleCount += next.length;
+        if (visibleCount >= filtered.length) seeMoreBtn.style.display = 'none';
+      });
+
+      applyFilter('all');
+      console.log('Projects loaded from JSON:', PROJECTS.length);
+
+    } catch (err) {
+      console.error('Project JSON load error:', err);
+      const grid = document.getElementById('projectGrid');
+      if (grid) grid.innerHTML = '<div class="card"><p>Unable to load project data.</p></div>';
+    }
+  })();
+  </script>
+
 </script>
 </body>
 </html>
