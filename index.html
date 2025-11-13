@@ -64,7 +64,7 @@
     .filter-pill { appearance:none; border:1.5px solid #E7E7E7; background:#fff; color:#222; font-weight:700; padding:.55rem 1rem; border-radius:999px; line-height:1; cursor:pointer; box-shadow:0 1px 0 rgba(0,0,0,.02); }
     .filter-pill:hover { border-color:#DCDCDC; }
     .filter-pill.is-active { background:var(--brand); color:#fff; border-color:var(--brand); }
-    .project-card .meta { font-size:.9rem; color:#666; margin-bottom:.4rem; }
+    .project-card .meta { font-size:.9rem; color:var(--brand); margin-bottom:.4rem; }
     .project-card .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.4rem; }
     .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
 
@@ -143,7 +143,7 @@
     <div class="container hero-grid">
       <div>
         <!-- <div class="kicker">mavenry consulting</div> -->
-        <h1 class="headline">Elite Background | Modern Approach</h1>
+        <h1 class="headline">Elite Background  |  Modern Approach</h1>
         <!-- <h1 class="headline">Elite Analytics + Operator Chops + AI Fluency</h1> -->
           <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years in consulting. He also founded Muse Paintbar, a best-in-class entertainment brand with 30+ locations.</p>
           <!-- <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse his <a href="#services">typical engagements</a>.</p> -->
@@ -224,7 +224,7 @@
           <h3>Consulting Experience</h3>
           <ul>
             <li>Promoted twice at BCG, both at earliest window</li>
-            <li>Led analytics training at <strong>BCG Texas</strong>.</li>
+            <li>Led analytics training at <strong>BCG Texas</strong></li>
             <li>Have completed 50+ projects over 7+ years</li>
           </ul>
 
@@ -320,9 +320,8 @@
     card.className = "card project-card";
     card.dataset.tags = (p.tags || []).join("|");
     card.innerHTML = `
-      <div class="card-meta">${p.meta}</div>
-      <div class="card-title">${p.title}</div>
-      <div class="card-desc">${p.desc}</div>
+      <div class="card-meta project-meta">${p.meta}</div>
+      <div class="card-desc project-desc">${p.desc}</div>
     `;
     return card;
   }
@@ -364,23 +363,22 @@
     }
 
     const PROJECTS = rows.map(row => {
-      const title    = (row["Project Description"] || "Project").trim();
       const caseType = (row["Case Type"] || "").trim();
       const industry = (row["Industry"] || "").trim();
       const location = (row["Location"] || "").trim();
-      const detail   = (row["Key analyses/output personally created"] || "").trim();
-      const funcs    = (row["Detailed Function(s)"] || "").trim();
       const bucket   = normalizeBucket((row["Bucket"] || "Strategy").trim());
 
       const meta = [caseType, industry, location].filter(Boolean).join(" • ");
-      let desc = title;
-      const extras = [];
-      if (funcs) extras.push(funcs);
-      if (detail && detail !== "*") extras.push(detail);
-      if (extras.length) desc += " — " + extras.join("; ");
+      const desc = (row["Project Description"] || "").toString()
+        .replace(/\s*\n\s*/g, " ")   // newlines → spaces
+        .replace(/\s{2,}/g, " ")     // collapse multiple spaces
+        .trim();
 
-      const tags = [bucket, industry, caseType].filter(Boolean);
-      return { meta, title, desc, tags };
+      const tags = [bucket, industry, caseType]
+        .filter(Boolean)
+        .map(t => t.toLowerCase());
+
+      return { meta, desc, tags };
     });
 
     // Render cards once
