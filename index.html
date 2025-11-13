@@ -301,16 +301,168 @@
   window.addEventListener('resize', hideWrappedBadges);
 </script>
 
-<!-- ====== Embedded projects data as CSV (paste your full table here; keep the header row) ====== -->
+
 <script>
+(function () {
+  // --- Helpers specific to Project History ---
+
+  function normalizeBucket(b){
+    const x = (b || "").toLowerCase();
+    if (x.startsWith("str")) return "Strategy";
+    if (x.startsWith("op"))  return "Operations";
+    if (x.startsWith("fin")) return "Finance";
+    if (x.startsWith("tool"))return "Tools";
+    return b ? (b[0].toUpperCase() + b.slice(1)) : "Strategy";
+  }
+
+  function renderCard(p){
+    const card = document.createElement("div");
+    card.className = "card project-card";
+    card.dataset.tags = (p.tags || []).join("|");
+    card.innerHTML = `
+      <div class="card-meta">${p.meta}</div>
+      <div class="card-title">${p.title}</div>
+      <div class="card-desc">${p.desc}</div>
+    `;
+    return card;
+  }
+
+  async function fetchProjects(){
+    // Works on GitHub Pages (/mavenry/) and locally
+    const base = window.location.pathname.replace(/\/[^/]*$/, "/"); // e.g. /mavenry/
+    const url  = base + "assets/projects.json?ts=" + Date.now();
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) {
+      const txt = await res.text();
+      throw new Error(
+        "HTTP " + res.status + " for " + url +
+        " – starts with: " + txt.slice(0, 80)
+      );
+    }
+    // Let fetch parse JSON; if it fails, we see a clear error
+    return await res.json();
+  }
+
+  async function initProjects(){
+    const grid = document.getElementById("projectGrid");
+    const seeMoreBtn = document.getElementById("seeMore");
+    const pills = Array.from(document.querySelectorAll(".filter-pill"));
+
+    if (!grid) {
+      console.warn("[Projects] #projectGrid not found");
+      return;
+    }
+
+    let rows;
+    try {
+      rows = await fetchProjects();
+    } catch (e) {
+      console.error("[Projects] load failed:", e);
+      grid.innerHTML = '<div class="card">Unable to load project data.</div>';
+      return;
+    }
+
+    const PROJECTS = rows.map(row => {
+      const title    = (row["Project Description"] || "Project").trim();
+      const caseType = (row["Case Type"] || "").trim();
+      const industry = (row["Industry"] || "").trim();
+      const location = (row["Location"] || "").trim();
+      const detail   = (row["Key analyses/output personally created"] || "").trim();
+      const funcs    = (row["Detailed Function(s)"] || "").trim();
+      const bucket   = normalizeBucket((row["Bucket"] || "Strategy").trim());
+
+      const meta = [caseType, industry, location].filter(Boolean).join(" • ");
+      let desc = title;
+      const extras = [];
+      if (funcs) extras.push(funcs);
+      if (detail && detail !== "*") extras.push(detail);
+      if (extras.length) desc += " — " + extras.join("; ");
+
+      const tags = [bucket, industry, caseType].filter(Boolean);
+      return { meta, title, desc, tags };
+    });
+
+    // Render cards once
+    grid.innerHTML = "";
+    const allCards = PROJECTS.map(renderCard);
+    allCards.forEach(c => grid.appendChild(c));
+    console.log("[Projects] loaded:", PROJECTS.length);
+
+    // Filter + pagination
+    const perPage = 6;
+    let currentFilter = "all";
+    let visibleCount = 0;
+
+    function getFiltered(){
+      return currentFilter === "all"
+        ? allCards
+        : allCards.filter(c => (c.dataset.tags || "").includes(currentFilter));
+    }
+
+    function applyFilter(newFilter){
+      currentFilter = newFilter;
+      visibleCount = 0;
+
+      pills.forEach(p => {
+        const active = p.dataset.filter === newFilter;
+        p.classList.toggle("is-active", active);
+        p.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      allCards.forEach(c => c.style.display = "none");
+      const filtered = getFiltered();
+      filtered.slice(0, perPage).forEach(c => c.style.display = "");
+      visibleCount = Math.min(perPage, filtered.length);
+      if (seeMoreBtn) {
+        seeMoreBtn.style.display = (visibleCount < filtered.length) ? "" : "none";
+      }
+    }
+
+    pills.forEach(p => {
+      p.addEventListener("click", () => applyFilter(p.dataset.filter));
+      p.addEventListener("keydown", e => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        const i = pills.indexOf(p);
+        const n = e.key === "ArrowRight"
+          ? (i + 1) % pills.length
+          : (i - 1 + pills.length) % pills.length;
+        pills[n].focus();
+      });
+    });
+
+    if (seeMoreBtn) {
+      seeMoreBtn.addEventListener("click", () => {
+        const filtered = getFiltered();
+        const next = filtered.slice(visibleCount, visibleCount + perPage);
+        next.forEach(c => c.style.display = "");
+        visibleCount += next.length;
+        if (visibleCount >= filtered.length) seeMoreBtn.style.display = "none";
+      });
+    }
+
+    applyFilter("all");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProjects);
+  } else {
+    initProjects();
+  }
+})();
+</script>
+
+
+<!-- ====== Embedded projects data as CSV (paste your full table here; keep the header row) ====== -->
+<!-- <script>
   const PROJECTS_CSV = `
 Project Description,Case Type,Industry,Location,Dur,"Key analyses/output personally created","Detailed Function(s)",Bucket
 "Market entry playbook for specialty retailer","Strategy","Retail","Boston, MA","12w","TAM model; MSA prioritization; location scoring; roadmap","Market Entry; Location Strategy","Str"
 "Pricing system + elasticity model","Operations","Consumer Services","New York, NY","8w","SKU elasticity; AB test; dashboard","Pricing; Analytics","Ops"
 `;
-</script>
+</script> -->
 
-<script>
+<!-- <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
   function parseCSV(text){
@@ -335,10 +487,10 @@ Project Description,Case Type,Industry,Location,Dur,"Key analyses/output persona
   function normalizeBucket(b){
     const map = { 'Fin':'Finance','Str':'Strategy','Ops':'Operations','Tool':'Tools','Tools':'Tools','Oth':'Operations','Corp Fin':'Finance' };
     if(!b) return 'Strategy';
-    return map[b] || (b[0].toUpperCase()+b.slice(1).toLowerCase());
-  }
+    return map[b] || (b[0].toUpperCase()+b.slice(1).toLowerCase()); -->
+  <!-- } -->
 
-  <script>
+  <!-- <script>
   /* === Load projects from assets/projects.json === */
   (async function initProjectsFromJSON(){
     try {
@@ -423,8 +575,7 @@ Project Description,Case Type,Industry,Location,Dur,"Key analyses/output persona
       if (grid) grid.innerHTML = '<div class="card"><p>Unable to load project data.</p></div>';
     }
   })();
-  </script>
+  </script> -->
 
-</script>
 </body>
 </html>
