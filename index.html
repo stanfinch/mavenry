@@ -153,11 +153,11 @@
 
         <div class="badge-row">
           <!-- <span class="badge">7+ years project experience</span> -->
-          <span class="badge">BCG Quant Trainer</span>
-          <!-- <span class="badge">50+ Projects</span> -->
           <span class="badge">Harvard MBA</span>
+          <!-- <span class="badge">50+ Projects</span> -->
+          <span class="badge">BCG Quant Trainer</span>
           <span class="badge" data-hide-on-wrap>CFA</span>
-          <span class="badge" data-hide-on-wrap>YPO</span>
+          <span class="badge" data-hide-on-wrap>YPO Inductee</span>
           <span class="badge" data-hide-on-wrap>AI Certified</span>
         </div>
         <!-- <button class="cta" type="submit">Connect</button> -->
@@ -342,8 +342,8 @@ Project Description,Case Type,Industry,Location,Dur,"Key analyses/output persona
   /* === Load projects from assets/projects.json === */
   (async function initProjectsFromJSON(){
     try {
-      const res = await fetch('assets/projects.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('Failed to fetch assets/projects.json');
+      const res = await fetch('/mavenry/assets/projects.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to fetch /mavenry/assets/projects.json');
       const json = await res.json();
 
       const PROJECTS = json.map(row => {
