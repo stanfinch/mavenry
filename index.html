@@ -401,19 +401,24 @@
     }
 
     function applyFilter(newFilter){
-      currentFilter = newFilter;
+      // always store the filter in lowercase
+      currentFilter = (newFilter || "all").toLowerCase();
       visibleCount = 0;
 
+      // update active pill styles
       pills.forEach(p => {
-        const active = p.dataset.filter === newFilter;
+        const pillFilter = (p.dataset.filter || "").toLowerCase();
+        const active = pillFilter === currentFilter;
         p.classList.toggle("is-active", active);
         p.setAttribute("aria-selected", active ? "true" : "false");
       });
 
+      // hide everything, then show only the filtered set
       allCards.forEach(c => c.style.display = "none");
       const filtered = getFiltered();
       filtered.slice(0, perPage).forEach(c => c.style.display = "");
       visibleCount = Math.min(perPage, filtered.length);
+
       if (seeMoreBtn) {
         seeMoreBtn.style.display = (visibleCount < filtered.length) ? "" : "none";
       }
