@@ -66,7 +66,7 @@
     .filter-pill:hover { border-color:#DCDCDC; }
     .filter-pill.is-active { background:var(--brand); color:#fff; border-color:var(--brand); }
     .project-card .meta { font-size:.9rem; color:var(--brand); margin-bottom:.4rem; }
-    .project-card .project-meta { font-size:.9rem; color:var(--brand); margin-bottom:.4rem; }
+    .project-card .project-meta { font-size:.9rem; color:var(--brand); margin-bottom:.4rem; font-weight: 700;}
     .project-card .project-desc { font-size:.8rem; color:#666; margin-bottom:.15rem; }
     .project-card .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.4rem; }
     .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
@@ -307,7 +307,6 @@
   window.addEventListener('resize', hideWrappedBadges);
 </script>
 
-
 <script>
 (function () {
   // --- Helpers specific to Project History ---
@@ -320,6 +319,49 @@
     if (x.startsWith("tool"))return "Tools";
     return b ? (b[0].toUpperCase() + b.slice(1)) : "Strategy";
   }
+
+  // High-level filter groups -> Detailed Function(s) terms (all lowercase)
+const FILTER_MAP = {
+  strategy: [
+    "strategy",
+    "market analysis",
+    "market entry",
+    "benchmarking",
+    "consumer surveys",
+    "online strategy",
+    "digital marketing",
+    "b2b sales"
+  ],
+  operations: [
+    "operations",
+    "process improvement",
+    "organization",
+    "project management",
+    "procurement",
+    "merchandising",
+    "real estate",
+    "prototype",
+    "big data",
+    "lifetime value"
+  ],
+  finance: [
+    "valuation",
+    "fundraising",
+    "cash planning",
+    "pricing",
+    "modeling",
+    "due diligence",
+    "lifetime value"
+  ],
+  tools: [
+    "kpis",
+    "stats",
+    "automation",
+    "forecasting",
+    "benchmarking"
+  ]
+};
+
 
   function renderCard(p){
     const card = document.createElement("div");
@@ -380,9 +422,14 @@
         .replace(/\s{2,}/g, " ")     // collapse multiple spaces
         .trim();
 
-      const tags = [bucket, industry, caseType]
-        .filter(Boolean)
-        .map(t => t.toLowerCase());
+      // Build tags ONLY from Detailed Function(s)
+      const funcsRaw = (row["Detailed Function(s)"] || "").toString();
+      const funcs = funcsRaw
+        .split(",")
+        .map(s => s.trim())
+        .filter(Boolean); // e.g. ["Operations", "Process Improvement"]
+
+      const tags = funcs.map(f => f.toLowerCase());
 
       return { meta, desc, tags };
     });
@@ -393,23 +440,30 @@
     allCards.forEach(c => grid.appendChild(c));
     console.log("[Projects] loaded:", PROJECTS.length);
 
-    // Filter + pagination
     const perPage = 6;
     let currentFilter = "all";
     let visibleCount = 0;
 
     function getFiltered(){
-      return currentFilter === "all"
-        ? allCards
-        : allCards.filter(c => (c.dataset.tags || "").includes(currentFilter));
+      if (currentFilter === "all") return allCards;
+
+      const allowed = FILTER_MAP[currentFilter];
+      if (!allowed || !allowed.length) return allCards;
+
+      return allCards.filter(c => {
+        const tagsStr = (c.dataset.tags || ""); // e.g. "operations|process improvement"
+        if (!tagsStr) return false;
+        const cardTags = tagsStr.split("|");
+        return cardTags.some(t => allowed.includes(t));
+      });
     }
 
     function applyFilter(newFilter){
-      // always store the filter in lowercase
+      // Normalize to lowercase to match FILTER_MAP keys
       currentFilter = (newFilter || "all").toLowerCase();
       visibleCount = 0;
 
-      // update active pill styles
+      // Update pill active state
       pills.forEach(p => {
         const pillFilter = (p.dataset.filter || "").toLowerCase();
         const active = pillFilter === currentFilter;
@@ -417,10 +471,10 @@
         p.setAttribute("aria-selected", active ? "true" : "false");
       });
 
-      // hide everything, then show only the filtered set
-      allCards.forEach(c => c.style.display = "none");
+      // Hide all, then show filtered subset
+      allCards.forEach(c => { c.style.display = "none"; });
       const filtered = getFiltered();
-      filtered.slice(0, perPage).forEach(c => c.style.display = "");
+      filtered.slice(0, perPage).forEach(c => { c.style.display = ""; });
       visibleCount = Math.min(perPage, filtered.length);
 
       if (seeMoreBtn) {
