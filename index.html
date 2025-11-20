@@ -478,6 +478,7 @@ const FILTER_MAP = {
       // Hide all, then show filtered subset
       allCards.forEach(c => { c.style.display = "none"; });
       const filtered = getFiltered();
+      updateCount(filtered.length);   // <-- NEW
       filtered.slice(0, perPage).forEach(c => { c.style.display = ""; });
       visibleCount = Math.min(perPage, filtered.length);
 
