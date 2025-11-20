@@ -65,10 +65,11 @@
 
     .advanced-filters {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
+      flex-wrap: nowrap;
+      gap: 0.4rem;
       margin: 0.6rem 0 0.4rem;
-      align-items: flex-end;
+      /* align-items: flex-end; */
+      overflow-x: auto;
     }
 
     .advanced-filters label {
@@ -80,8 +81,8 @@
     }
 
     .advanced-filters select {
-      min-width: 100px;
-      padding: 0.4rem 0.3rem;
+      width: 110px;
+      padding: 0.4rem 0.4rem;
       border-radius: 999px;
       border: 1px solid #ddd;
       font-size: 0.85rem;
