@@ -53,7 +53,7 @@
     .card-head h3 { margin:0; }
 
     /* Filters & Projects */
-    .filters { display:flex; flex-wrap:wrap; gap:.35rem; margin:.8rem 0 1.2rem; }
+    .filters { display:flex; flex-wrap:wrap; gap:.2rem; margin:.8rem 0 1.2rem; }
     .filter-pill { appearance:none; border:1.5px solid #E7E7E7; background:#fff; color:#333; font-weight:700; padding:.55rem 1rem; border-radius:999px; line-height:1; cursor:pointer; box-shadow:0 1px 0 rgba(0,0,0,.02); }
     .filter-pill:hover { border-color:#DCDCDC; }
     .filter-pill.is-active { background:var(--brand); color:#fff; border-color:var(--brand); }
@@ -66,7 +66,7 @@
     .advanced-filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.3rem;
       margin: 0.6rem 0 0.4rem;
       align-items: flex-end;
     }
@@ -74,14 +74,14 @@
     .advanced-filters label {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.2rem;
       font-size: 0.8rem;
       color: #555;
     }
 
     .advanced-filters select {
-      min-width: 120px;
-      padding: 0.4rem 0.7rem;
+      min-width: 100px;
+      padding: 0.4rem 0.4rem;
       border-radius: 999px;
       border: 1px solid #ddd;
       font-size: 0.85rem;
@@ -241,15 +241,15 @@
             <li>Promoted 2x at BCG, each during earliest window</li>
             <li>Independent consultant since late 2021</li>
             <li>Completed 50+ projects over 8+ years</li>
-            <li>Led Excel/analytics training at BCG Texas</li>
+            <li>Led Excel & analytics training at BCG Texas</li>
           </ul>
 
           <h3>Operating Experience</h3>
           <ul>
-            <li><u>Founder</u> of <a href="https://www.musepaintbar.com" target="_blank" rel="noopener">Muse Paintbar</a>; CEO for 8 years</li>
+            <li><u>Founder</u> of <a href="https://www.musepaintbar.com" target="_blank" rel="noopener"><strong>Muse Paintbar</strong></a>; CEO for 8 years</li>
             <li><u>Footprint</u>: Developed prototype, built 32 stores</li>
             <li><u>Team</u>: 400+ strong across 3 hubs (Boston, NYC, DC)</li>
-            <li><u>Brand</u>: Top quality scores in ‘paint & sip’ space</li>
+            <li><u>Brand</u>: Highest rated in ‘paint & sip’ space</li>
             <li><u>Finance</u>: Raised $15M+ from seed to PE</li>
           </ul>
 
@@ -476,9 +476,9 @@
         });
     }
 
-    populateSelect(industrySelect, industrySet, "All industries");
-    populateSelect(caseTypeSelect, caseTypeSet, "All case types");
-    populateSelect(funcSelect, funcSet, "All functions");
+    populateSelect(industrySelect, industrySet, "Industry");
+    populateSelect(caseTypeSelect, caseTypeSet, "Case Type");
+    populateSelect(funcSelect, funcSet, "Function");
 
     // Render cards once
     grid.innerHTML = "";
