@@ -216,6 +216,9 @@
           <button class="filter-pill" role="tab" aria-selected="false" data-filter="Tools">Tools</button>
         </div>
 
+        <div id="projectCount" style="font-weight:600; margin-bottom:.6rem;"></div>  <!-- ADD THIS -->
+
+
         <div class="grid-3" id="projectGrid"></div>
         <div style="display:flex;justify-content:center;margin-top:1rem;">
           <button id="seeMore" class="btn">See More</button>
@@ -447,6 +450,12 @@ const FILTER_MAP = {
     const perPage = 6;
     let currentFilter = "all";
     let visibleCount = 0;
+
+    function updateCount(num){
+      const el = document.getElementById("projectCount");
+      if (!el) return;
+      el.textContent = num + " project" + (num === 1 ? "" : "s");
+    }
 
     function getFiltered(){
       if (currentFilter === "all") return allCards;
