@@ -31,16 +31,9 @@
     .hero-img img { width:100%; height:auto; display:block; object-fit:cover; }
     .kicker { color:var(--brand); font-weight:800; letter-spacing:.06em; text-transform:uppercase; font-family:'Poppins',sans-serif; font-size:1.2rem; }
     .headline { font-size:clamp(20px, 2.8vw + 0.2rem, 25px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:0rem; line-height:1.3; font-weight:650; margin-bottom: 1rem;}
-    /* Mobile: shrink a touch more so it never wraps on ~430px CSS width (16 Pro Max) */
-    /* @media (max-width: 640px) {
-      .headline { font-size: clamp(12px, 5.0vw, 16px); }} */
-
-     /* @media (min-width: 1200px) {.headline { font-size: 23px; }  /* stops growing past a certain point */ */
-    /* font-size:clamp(0.9rem,3vw + 0.9rem,1.3rem); */
-    /* white-space:nowrap; text-align:left; font-size:2vw;  */
     .subhead { color:#444; font-size:1.05rem; margin-top:.25rem; }
     .badge-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
-    .badge { background:transparent; border:1.7px solid var(--brand); padding:.2rem .25rem; border-radius:999px; font-size:.85rem; font-weight:600; font-family:'Poppins',sans-serif; } /* color:var(--brand); */
+    .badge { background:transparent; border:1.7px solid var(--brand); padding:.2rem .25rem; border-radius:999px; font-size:.85rem; font-weight:600; font-family:'Poppins',sans-serif; }
 
     section { padding:1rem 0; }
     .section-muted { background:var(--muted); }
@@ -48,7 +41,7 @@
 
     /* Cards */
     .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; align-items: stretch;}
-    .card { display:flex; flex-direction:column; border:1.5px solid #ececec; border-radius:16px;     /* justify-content:space-between; */
+    .card { display:flex; flex-direction:column; border:1.5px solid #ececec; border-radius:16px;
       padding:1rem; background:#fff; box-shadow:0 3px 14px rgba(0,0,0,.04); }
     .card h3 { font-size:clamp(16px, 2.8vw + 0.2rem, 20px); color:var(--brand);}
     .card p { color:#444; }
@@ -56,7 +49,6 @@
     .icon { width:38px; height:38px; border-radius:10px; display:grid; place-items:center; color:#fff; font-weight:700; }
     .i-strategy{background:var(--steel)} .i-ops{background:var(--sage)} .i-invest{background:var(--brand)}
 
-    /* (ADDED) Align service icon and title on one row */
     .card-head { display:flex; align-items:center; gap:.6rem; margin-bottom:.4rem; }
     .card-head h3 { margin:0; }
 
@@ -71,14 +63,47 @@
     .project-card .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.4rem; }
     .tag { font-size:.8rem; background:#f1f1f1; border:1px solid #e5e5e5; padding:.2rem .45rem; border-radius:999px; }
 
+    .advanced-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.6rem 0 0.4rem;
+      align-items: flex-end;
+    }
+
+    .advanced-filters label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .advanced-filters select {
+      min-width: 150px;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      font-size: 0.85rem;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    .project-count {
+      margin-bottom:.6rem;
+      font-style:italic;
+      color:#aaa;
+      font-weight:400;
+      font-size:0.9rem;
+    }
+
     /* About */
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:center; }
     .avatar-wrap { display:flex; justify-content:center; }
     .avatar { width:360px; max-width:100%; height:auto; border-radius:0; }
 
-    #about ul {padding-left: 1.0rem; margin-left: 0.2rem; margin-top: 0.4rem; color: #444; }   /* default is ~2.5rem */
-      /* margin-left: 0;}         /* optional: removes extra margin */
-    #about li {margin-left: 0.2rem; color: #444; }        /* ensures the bullet stays close to the text */
+    #about ul {padding-left: 1.0rem; margin-left: 0.2rem; margin-top: 0.4rem; color: #444; }
+    #about li {margin-left: 0.2rem; color: #444; }
 
     /* Contact / footer */
     form { display:grid; gap:.8rem; max-width:560px; }
@@ -88,39 +113,11 @@
     footer{ padding:2rem 0; border-top:1px solid #eee; color:#666; font-size:.95rem; }
     .footer-grid{ display:grid; grid-template-columns:1fr auto; align-items:center; }
 
-    /* Mobile tweaks */
-    /* .headline .headline-mobile { display: none; } /* default: desktop only */
     @media (max-width:960px){ .hero-grid,.grid-3,.about-grid{grid-template-columns:1fr} .brand svg{height:44px} .avatar{width:280px} }
     @media (max-width:640px){
       .hero { padding-top:1.5rem; padding-bottom:1rem; }
       .badge-row{ justify-content:space-between; gap:.6rem; }}
-      /* Mobile: keep headline on one line and auto-shrink to fit */
-    /* @media (max-width: 640px) {
-      .headline{
-        white-space: nowrap;                 /* one line */
-        /* font-size: clamp(1.05rem, 5.6vw, 2rem);  /* fluid, shrinks as needed */
-        /* line-height: 1.15; */
-        /* color: inherit !important;           /* override any prior transparency */
-        /* overflow: visible;                   /* avoid clipping */
-        /* text-overflow: clip; }}                /* no ellipsis */
 
-    /* Headline: swap text on mobile, no pseudo-elements */
-    /* @media (max-width: 640px) {  /* show mobile span, hide desktop span */
-      /* .headline .headline-desktop { display: none; }
-      .headline .headline-mobile  {
-        display: inline;                  /* sits in normal flow */
-        /* white-space: nowrap;              /* keep on one line */
-        /* font-size: clamp(1.1rem, 5.5vw, 2.1rem); */
-        /* line-height: 1.15;} */
-      /* IMPORTANT: keep the h1 itself "normal" so it doesn't influence siblings */
-      /* .headline { */
-        /* white-space: normal;              /* reset any previous nowrap */
-        /* overflow: visible;                /* reset any previous overflow */
-        /* text-overflow: clip;              /* reset any previous ellipsis */
-        /* position: static;                 /* ensure no absolute effects linger */
-        /* margin-bottom: 1rem; }}           /* standard spacing below h1 */
-
-    /* Ensure in-page anchors stop below sticky header */
     #services, #projects, #about, #contact { scroll-margin-top: 80px; }
   </style>
 </head>
@@ -128,7 +125,6 @@
 <header>
   <div class="container nav">
     <div class="brand">
-      <!-- Inline SVG wordmark -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" aria-label="mavenry wordmark">
         <defs><style>.word{font:650 36px 'Poppins',sans-serif;fill:#BF5700}</style></defs>
         <rect x="0" y="8" width="250" height="6" fill="#8F8F8F"/>
@@ -137,7 +133,6 @@
       </svg>
     </div>
     <nav>
-      <!-- <a href="#services">Services</a> -->
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
       <a href="#contact" class="cta" >Connect</a>
@@ -149,25 +144,18 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <!-- <div class="kicker">mavenry consulting</div> -->
-        <h1 class="headline">Elite Background  |  Modern Approach</h1>
-        <!-- <h1 class="headline">Elite Analytics + Operator Chops + AI Fluency</h1> -->
-          <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years in consulting. He also founded Muse Paintbar, a best-in-class entertainment brand with 30+ locations.</p>
-          <!-- <p class="subhead">Stan supplements that background with pragmatic AI to generate clear insights and smart operational solutions. Browse his <a href="#services">typical engagements</a>.</p> -->
-          <p class="subhead">He has broad industry experience with emphasis in consumer, PE, and healthcare. Filter and search Stan's <a href="#projects"><strong>50+ prior projects below</strong></a>.</p>
-          <!-- <p class="subhead">Stan also employs pragmatic AI, flexible staffing, and lean operations to accelerate results.</p> <!-- Browse his <a href="#services"><strong>typical engagements</strong></a>. -->
-          <p class="subhead">At Mavenry, Stan applies AI proficiency where pragmatic; and he offers flexible staffing tailor results and maximize value.</p> <!-- Browse his <a href="#services"><strong>typical engagements</strong></a>. -->
+        <h1 class="headline">Elite Background   |   Modern Approach</h1>
+        <p class="subhead"><strong>Stan Finch</strong> is ex-BCG with 7+ years in consulting. He also founded Muse Paintbar, a best-in-class entertainment brand with 30+ locations.</p>
+        <p class="subhead">He has broad industry experience with emphasis in consumer, PE, tech, and healthcare. Filter and search Stan's <a href="#projects"><strong>50+ prior projects below</strong></a>.</p>
+        <p class="subhead">At Mavenry, Stan applies AI proficiency where pragmatic; and he offers flexible staffing tailor results and maximize value.</p>
 
         <div class="badge-row">
-          <!-- <span class="badge">7+ years project experience</span> -->
           <span class="badge">Harvard MBA</span>
-          <!-- <span class="badge">50+ Projects</span> -->
           <span class="badge">BCG Quant Trainer</span>
           <span class="badge" data-hide-on-wrap>CFA</span>
           <span class="badge" data-hide-on-wrap>YPO Inductee</span>
           <span class="badge" data-hide-on-wrap>AI Certified</span>
         </div>
-        <!-- <button class="cta" type="submit">Connect</button> -->
       </div>
       <div class="hero-img">
         <picture>
@@ -181,10 +169,8 @@
     </div>
   </section>
 
-  <!-- SERVICES (now white, header commented; titles inline with icons) -->
   <section id="services">
       <div class="container">
-        <!-- <h2 class="section-title">What I Do</h2> -->
         <div class="grid-3">
           <div class="card">
             <div class="card-head"><div class="icon i-strategy">S</div><h3>Strategy Formation</h3></div>
@@ -202,7 +188,6 @@
       </div>
     </section>
 
-  <!-- PROJECTS (now light gray; no duration in tags) -->
   <section id="projects" class="section-muted">
       <div class="container">
         <h2 class="section-title">Stan's Project History</h2>
@@ -216,8 +201,29 @@
           <button class="filter-pill" role="tab" aria-selected="false" data-filter="Tools">Tools</button>
         </div>
 
-        <div id="projectCount" style="font-weight:600; margin-bottom:.6rem;"></div>  <!-- ADD THIS -->
+        <!-- Advanced dropdown filters -->
+        <div class="advanced-filters">
+          <label>
+            <span>Industry</span>
+            <select id="filterIndustry">
+              <option value="all">All industries</option>
+            </select>
+          </label>
+          <label>
+            <span>Case type</span>
+            <select id="filterCaseType">
+              <option value="all">All case types</option>
+            </select>
+          </label>
+          <label>
+            <span>Function</span>
+            <select id="filterFunction">
+              <option value="all">All functions</option>
+            </select>
+          </label>
+        </div>
 
+        <div id="projectCount" class="project-count"></div>
 
         <div class="grid-3" id="projectGrid"></div>
         <div style="display:flex;justify-content:center;margin-top:1rem;">
@@ -226,7 +232,6 @@
       </div>
     </section>
 
-  <!-- ABOUT (now white; bullets; oval headshot stays) -->
   <section id="about">
       <div class="container about-grid">
         <div>
@@ -251,14 +256,8 @@
           <ul>
             <li><strong>Harvard Business School</strong> — M.B.A.</li>
             <li><strong>Northwestern University</strong> — M.S. Industrial Engineering, B.A. Economics &amp; Law</li>
-
           </ul>
 
-          <!-- <h3>Personal</h3> -->
-          <!-- <ul> -->
-            <!-- <li>Lives in Denver area with his two daughters</li> -->
-            <!-- <li>Volunteer coach with the kids’ ski team.</li> -->
-          <!-- </ul> -->
           <p style="margin-top:.5rem;"><a href="assets/resume.pdf" target="_blank" rel="noopener">View full resume →</a></p>
 
         </div>
@@ -274,7 +273,6 @@
   <section id="contact">
       <div class="container">
         <h2 class="section-title">Let’s Work Together</h2>
-        <!-- <p>Drop a note and I’ll be in touch.</p> -->
         <form action="https://formspree.io/f/your-id-here" method="POST">
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="_replyto" placeholder="Email" required />
@@ -293,10 +291,6 @@
     <div><a href="#top">Back to top ↑</a></div>
   </div>
 </footer>
-
-
-
-
 
 <script>
   // Hide badges with data-hide-on-wrap if they wrap to a second row
@@ -328,52 +322,56 @@
   }
 
   // High-level filter groups -> Detailed Function(s) terms (all lowercase)
-const FILTER_MAP = {
-  strategy: [
-    "strategy",
-    "market analysis",
-    "market entry",
-    "benchmarking",
-    "consumer surveys",
-    "online strategy",
-    "digital marketing",
-    "b2b sales"
-  ],
-  operations: [
-    "operations",
-    "process improvement",
-    "organization",
-    "project management",
-    "procurement",
-    "merchandising",
-    "real estate",
-    "prototype",
-    "big data",
-    "lifetime value"
-  ],
-  finance: [
-    "valuation",
-    "fundraising",
-    "cash planning",
-    "pricing",
-    "modeling",
-    "due diligence",
-    "lifetime value"
-  ],
-  tools: [
-    "kpis",
-    "stats",
-    "automation",
-    "forecasting",
-    "benchmarking"
-  ]
-};
-
+  const FILTER_MAP = {
+    strategy: [
+      "strategy",
+      "market analysis",
+      "market entry",
+      "benchmarking",
+      "consumer surveys",
+      "online strategy",
+      "digital marketing",
+      "b2b sales"
+    ],
+    operations: [
+      "operations",
+      "process improvement",
+      "organization",
+      "project management",
+      "procurement",
+      "merchandising",
+      "real estate",
+      "prototype",
+      "big data",
+      "lifetime value"
+    ],
+    finance: [
+      "valuation",
+      "fundraising",
+      "cash planning",
+      "pricing",
+      "modeling",
+      "due diligence",
+      "lifetime value"
+    ],
+    tools: [
+      "kpis",
+      "stats",
+      "automation",
+      "forecasting",
+      "benchmarking"
+    ]
+  };
 
   function renderCard(p){
     const card = document.createElement("div");
     card.className = "card project-card";
-    card.dataset.tags = (p.tags || []).join("|");
+
+    card.dataset.tags     = (p.tags || []).join("|");
+    card.dataset.industry = (p.industry || "").toLowerCase();
+    card.dataset.caseType = (p.caseType || "").toLowerCase();
+    card.dataset.funcs    = (p.funcs || []).map(f => f.toLowerCase()).join("|");
+
     card.innerHTML = `
       <div class="card-meta project-meta">${p.meta}</div>
       <div class="card-desc project-desc">${p.desc}</div>
@@ -382,8 +380,7 @@ const FILTER_MAP = {
   }
 
   async function fetchProjects(){
-    // Works on GitHub Pages (/mavenry/) and locally
-    const base = window.location.pathname.replace(/\/[^/]*$/, "/"); // e.g. /mavenry/
+    const base = window.location.pathname.replace(/\/[^/]*$/, "/");
     const url  = base + "assets/projects.json?ts=" + Date.now();
 
     const res = await fetch(url, { cache: "no-store" });
@@ -394,7 +391,6 @@ const FILTER_MAP = {
         " – starts with: " + txt.slice(0, 80)
       );
     }
-    // Let fetch parse JSON; if it fails, we see a clear error
     return await res.json();
   }
 
@@ -425,21 +421,57 @@ const FILTER_MAP = {
 
       const meta = [caseType, industry, location].filter(Boolean).join(" • ");
       const desc = (row["Project Description"] || "").toString()
-        .replace(/\s*\n\s*/g, " ")   // newlines → spaces
-        .replace(/\s{2,}/g, " ")     // collapse multiple spaces
+        .replace(/\s*\n\s*/g, " ")
+        .replace(/\s{2,}/g, " ")
         .trim();
 
-      // Build tags ONLY from Detailed Function(s)
       const funcsRaw = (row["Detailed Function(s)"] || "").toString();
       const funcs = funcsRaw
         .split(",")
         .map(s => s.trim())
-        .filter(Boolean); // e.g. ["Operations", "Process Improvement"]
+        .filter(Boolean);
 
       const tags = funcs.map(f => f.toLowerCase());
 
-      return { meta, desc, tags };
+      return { meta, desc, tags, industry, caseType, funcs };
     });
+
+    // Build unique option sets for dropdown filters
+    const industrySet = new Set();
+    const caseTypeSet = new Set();
+    const funcSet = new Set();
+
+    PROJECTS.forEach(p => {
+      if (p.industry) industrySet.add(p.industry);
+      if (p.caseType) caseTypeSet.add(p.caseType);
+      (p.funcs || []).forEach(f => funcSet.add(f));
+    });
+
+    const industrySelect = document.getElementById("filterIndustry");
+    const caseTypeSelect = document.getElementById("filterCaseType");
+    const funcSelect     = document.getElementById("filterFunction");
+
+    function populateSelect(select, values, allLabel){
+      if (!select) return;
+      select.innerHTML = "";
+      const optAll = document.createElement("option");
+      optAll.value = "all";
+      optAll.textContent = allLabel;
+      select.appendChild(optAll);
+
+      Array.from(values)
+        .sort((a, b) => a.localeCompare(b))
+        .forEach(val => {
+          const opt = document.createElement("option");
+          opt.value = val.toLowerCase();
+          opt.textContent = val;
+          select.appendChild(opt);
+        });
+    }
+
+    populateSelect(industrySelect, industrySet, "All industries");
+    populateSelect(caseTypeSelect, caseTypeSet, "All case types");
+    populateSelect(funcSelect, funcSet, "All functions");
 
     // Render cards once
     grid.innerHTML = "";
@@ -448,35 +480,53 @@ const FILTER_MAP = {
     console.log("[Projects] loaded:", PROJECTS.length);
 
     const perPage = 6;
-    let currentFilter = "all";
-    let visibleCount = 0;
+    let currentFilter   = "all";
+    let currentIndustry = "all";
+    let currentCaseType = "all";
+    let currentFunction = "all";
+    let visibleCount    = 0;
 
     function updateCount(num){
       const el = document.getElementById("projectCount");
       if (!el) return;
-      el.textContent = num + " project" + (num === 1 ? "" : "s");
+      el.textContent = num + " project" + (num === 1 ? "" : "s") + "...";
     }
 
     function getFiltered(){
-      if (currentFilter === "all") return allCards;
-
       const allowed = FILTER_MAP[currentFilter];
-      if (!allowed || !allowed.length) return allCards;
 
       return allCards.filter(c => {
-        const tagsStr = (c.dataset.tags || ""); // e.g. "operations|process improvement"
-        if (!tagsStr) return false;
-        const cardTags = tagsStr.split("|");
-        return cardTags.some(t => allowed.includes(t));
+        if (currentFilter !== "all" && allowed && allowed.length){
+          const tagsStr = (c.dataset.tags || "");
+          if (!tagsStr) return false;
+          const cardTags = tagsStr.split("|");
+          if (!cardTags.some(t => allowed.includes(t))) return false;
+        }
+
+        if (currentIndustry !== "all"){
+          const ind = (c.dataset.industry || "");
+          if (ind !== currentIndustry) return false;
+        }
+
+        if (currentCaseType !== "all"){
+          const ct = (c.dataset.caseType || "");
+          if (ct !== currentCaseType) return false;
+        }
+
+        if (currentFunction !== "all"){
+          const funcsStr = c.dataset.funcs || "";
+          const funcsArr = funcsStr ? funcsStr.split("|") : [];
+          if (!funcsArr.includes(currentFunction)) return false;
+        }
+
+        return true;
       });
     }
 
     function applyFilter(newFilter){
-      // Normalize to lowercase to match FILTER_MAP keys
       currentFilter = (newFilter || "all").toLowerCase();
       visibleCount = 0;
 
-      // Update pill active state
       pills.forEach(p => {
         const pillFilter = (p.dataset.filter || "").toLowerCase();
         const active = pillFilter === currentFilter;
@@ -484,16 +534,36 @@ const FILTER_MAP = {
         p.setAttribute("aria-selected", active ? "true" : "false");
       });
 
-      // Hide all, then show filtered subset
       allCards.forEach(c => { c.style.display = "none"; });
       const filtered = getFiltered();
-      updateCount(filtered.length);   // <-- NEW
+      updateCount(filtered.length);
       filtered.slice(0, perPage).forEach(c => { c.style.display = ""; });
       visibleCount = Math.min(perPage, filtered.length);
 
       if (seeMoreBtn) {
         seeMoreBtn.style.display = (visibleCount < filtered.length) ? "" : "none";
       }
+    }
+
+    if (industrySelect) {
+      industrySelect.addEventListener("change", () => {
+        currentIndustry = industrySelect.value || "all";
+        applyFilter(currentFilter);
+      });
+    }
+
+    if (caseTypeSelect) {
+      caseTypeSelect.addEventListener("change", () => {
+        currentCaseType = caseTypeSelect.value || "all";
+        applyFilter(currentFilter);
+      });
+    }
+
+    if (funcSelect) {
+      funcSelect.addEventListener("change", () => {
+        currentFunction = funcSelect.value || "all";
+        applyFilter(currentFilter);
+      });
     }
 
     pills.forEach(p => {
@@ -528,131 +598,6 @@ const FILTER_MAP = {
   }
 })();
 </script>
-
-
-<!-- ====== Embedded projects data as CSV (paste your full table here; keep the header row) ====== -->
-<!-- <script>
-  const PROJECTS_CSV = `
-Project Description,Case Type,Industry,Location,Dur,"Key analyses/output personally created","Detailed Function(s)",Bucket
-"Market entry playbook for specialty retailer","Strategy","Retail","Boston, MA","12w","TAM model; MSA prioritization; location scoring; roadmap","Market Entry; Location Strategy","Str"
-"Pricing system + elasticity model","Operations","Consumer Services","New York, NY","8w","SKU elasticity; AB test; dashboard","Pricing; Analytics","Ops"
-`;
-</script> -->
-
-<!-- <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function parseCSV(text){
-    const rows = text.split(/\r?\n/).filter(Boolean);
-    if(!rows.length) return { header:[], data:[] };
-    const header = splitCSVRow(rows.shift());
-    const data = rows.map(r => splitCSVRow(r));
-    return { header, data };
-  }
-  function splitCSVRow(line){
-    const re = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^",]*))/g;
-    const out=[]; let m;
-    while((m=re.exec(line))!==null){
-      out.push(m[1] ? m[1].replace(/""/g,'"') : (m[2]||""));
-    }
-    return out;
-  }
-  function idx(header, name){
-    const i = header.findIndex(h => h.trim().toLowerCase() === name.toLowerCase());
-    return i === -1 ? null : i;
-  }
-  function normalizeBucket(b){
-    const map = { 'Fin':'Finance','Str':'Strategy','Ops':'Operations','Tool':'Tools','Tools':'Tools','Oth':'Operations','Corp Fin':'Finance' };
-    if(!b) return 'Strategy';
-    return map[b] || (b[0].toUpperCase()+b.slice(1).toLowerCase()); -->
-  <!-- } -->
-
-  <!-- <script>
-  /* === Load projects from assets/projects.json === */
-  (async function initProjectsFromJSON(){
-    try {
-      const res = await fetch("assets/projects.json", { cache: 'no-store' });
-      if (!res.ok) throw new Error('Failed to fetch assets/projects.json');
-      const json = await res.json();
-
-      const PROJECTS = json.map(row => {
-        const title    = (row["Project Description"] || "Project").trim();
-        const caseType = (row["Case Type"] || "").trim();
-        const industry = (row["Industry"] || "").trim();
-        const location = (row["Location"] || "").trim();
-        const detail   = (row["Key analyses/output personally created"] || "").trim();
-        const funcs    = (row["Detailed Function(s)"] || "").trim();
-        const bucket   = normalizeBucket((row["Bucket"] || "Strategy").trim());
-        const meta = [caseType, industry, location].filter(Boolean).join(' • ');
-        let desc = title;
-        const extras = [];
-        if (funcs) extras.push(funcs);
-        if (detail && detail !== '*') extras.push(detail);
-        if (extras.length) desc += ' — ' + extras.join('; ');
-        const tags = [bucket, industry, caseType].filter(Boolean);
-        return { meta, title, desc, tags };
-      });
-
-      const grid = document.getElementById('projectGrid');
-      grid.innerHTML = '';
-      const allCards = PROJECTS.map(renderCard);
-      allCards.forEach(c => grid.appendChild(c));
-
-      const pills = Array.from(document.querySelectorAll('.filter-pill'));
-      const seeMoreBtn = document.getElementById('seeMore');
-      const perPage = 6;
-      let currentFilter = 'all';
-      let visibleCount = 0;
-
-      function getFiltered(){
-        return currentFilter === 'all'
-          ? allCards
-          : allCards.filter(c => (c.dataset.tags || '').includes(currentFilter));
-      }
-
-      function applyFilter(newFilter){
-        currentFilter = newFilter;
-        visibleCount = 0;
-        pills.forEach(p=>{
-          const a = p.dataset.filter === newFilter;
-          p.classList.toggle('is-active', a);
-          p.setAttribute('aria-selected', a ? 'true' : 'false');
-        });
-        allCards.forEach(c => c.style.display = 'none');
-        const filtered = getFiltered();
-        filtered.slice(0, perPage).forEach(c => c.style.display = '');
-        visibleCount = Math.min(perPage, filtered.length);
-        seeMoreBtn.style.display = (visibleCount < filtered.length) ? '' : 'none';
-      }
-
-      pills.forEach(p=>{
-        p.addEventListener('click', ()=>applyFilter(p.dataset.filter));
-        p.addEventListener('keydown', e=>{
-          if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
-          const i = pills.indexOf(p);
-          const n = e.key==='ArrowRight' ? (i+1)%pills.length : (i-1+pills.length)%pills.length;
-          pills[n].focus();
-        });
-      });
-
-      seeMoreBtn.addEventListener('click', ()=>{
-        const filtered = getFiltered();
-        const next = filtered.slice(visibleCount, visibleCount + perPage);
-        next.forEach(c=>c.style.display='');
-        visibleCount += next.length;
-        if (visibleCount >= filtered.length) seeMoreBtn.style.display = 'none';
-      });
-
-      applyFilter('all');
-      console.log('Projects loaded from JSON:', PROJECTS.length);
-
-    } catch (err) {
-      console.error('Project JSON load error:', err);
-      const grid = document.getElementById('projectGrid');
-      if (grid) grid.innerHTML = '<div class="card"><p>Unable to load project data.</p></div>';
-    }
-  })();
-  </script> -->
 
 </body>
 </html>
