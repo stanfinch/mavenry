@@ -440,7 +440,7 @@ const FILTER_MAP = {
 
     // Render cards once
     grid.innerHTML = "";
-    const allCards = PROJECTS.map(renderCard);
+    const allCards = PROJECTS.slice().reverse().map(renderCard);
     allCards.forEach(c => grid.appendChild(c));
     console.log("[Projects] loaded:", PROJECTS.length);
 
