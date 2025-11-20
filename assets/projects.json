@@ -202,7 +202,7 @@
   {
     "Project Description": "Led the company side to pitch investors and then complete diligence for $15mm of institutional investment",
     "Case Type": "Corporate Finance",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "New York, NY",
     "Dur": "6 mo",
     "Key analyses/output personally created": "* pitch deck that generated sufficient interest to have ~25 followup meetings with middle market private equity firms\n* completed financing deal (x2) including all diligence items",
@@ -212,7 +212,7 @@
   {
     "Project Description": "Crafted store real estate strategy and rollout plan for the next 50 locations of entertainment/restaurant concept",
     "Case Type": "Strategy",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "New York, NY",
     "Dur": "3 mo",
     "Key analyses/output personally created": "* real estate strategy document\n* list of specific shopping centers that were options for rollout",
@@ -222,7 +222,7 @@
   {
     "Project Description": "Managed the roll-out of 32 stores from Maine to Virginia; included authoring several documents to standardize the operation",
     "Case Type": "Implementation",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "East Coast",
     "Dur": "18 mo",
     "Key analyses/output personally created": "* checklist with over 100 items per store along with responsibilities\n* standards document to ensure quality/consistency",
@@ -232,7 +232,7 @@
   {
     "Project Description": "Created the prototype of an entertainment/restaurant concept that generated 75% annual ROI per unit; able to use this to raise funds for 30+ additional stores",
     "Case Type": "Implementation",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "New England",
     "Dur": "9 mo",
     "Key analyses/output personally created": "* fully operational store concept\n* set of learnings for future locations",
@@ -242,7 +242,7 @@
   {
     "Project Description": "Developed updated food & beverage menu for 30 stores; included supplier revamp/optimization and a 3-tiered pricing system based on store volume & location",
     "Case Type": "Implementation",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "East Coast",
     "Dur": "4 mo",
     "Key analyses/output personally created": "* New menu & other promotional collateral\n* Projected revenue/margin impact\n* Everything needed to update the POS systems",
@@ -252,7 +252,7 @@
   {
     "Project Description": "Created tool to predict the revenue that i) a potential new product (i.e., an artwork) would generate based on consumer surveys and social media feedback and ii) an established product would generate based on statistical eval of past performance",
     "Case Type": "Tool Development",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "New York, NY",
     "Dur": "2 mo",
     "Key analyses/output personally created": "* spreadsheet based tool to evaluate prospective new products (art works) and old ones\n* spreadsheet tool to create monthly calendar in each studio",
@@ -262,7 +262,7 @@
   {
     "Project Description": "Developed process and tool to staff employees such that i) all constraints were met (requested off days, legal requirements, min resources on schedule) and ii) highest rated employees working at times when customer signups projected to be highest",
     "Case Type": "Tool Development",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "New York, NY",
     "Dur": "2 mo",
     "Key analyses/output personally created": "* spreadsheet to generate automated monthly staffing calendar at each of 30 stores",
@@ -272,7 +272,7 @@
   {
     "Project Description": "Developed automated process for surveys emailed to customers to feed into company dashboard (both corporate and store-level versions) with customer satisfaction scores",
     "Case Type": "Tool Development",
-    "Industry": "Restaurant / Entertainment",
+    "Industry": "Consumer",
     "Location": "Boston, MA",
     "Dur": "2 mo",
     "Key analyses/output personally created": "* process to send automated emails to customers after attending events and record quant/qual feedback\n* database of thousands of customer reviews that fed into company-wide KPI dashboard for customer satisfaction ratings",
@@ -493,7 +493,7 @@
     "Project Description": "Category Prioritization: Developed fact base and built a scoring system based on market share, concentration, pricing power, recent growth, distribution trends, SKU velocity, etc. \nBrand Rankings: Ranked brands based on recent performance, potential synergies, actionability",
     "Case Type": "Investment Funds",
     "Industry": "Private Equity",
-    "Location": "Chicago, IL",
+    "Location": "Chicago",
     "Dur": "3 mo",
     "Key analyses/output personally created": "* model to score food/beverage categories using Nielsen data, survey analysis, and financials\n* model to rank brands using same data and some high-level due diligence\n* finalized decks with recommendations on segment focus and 50 brand targets",
     "Detailed Function(s)": "Due Diligence, Market Analysis, Strategy",
